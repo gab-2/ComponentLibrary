@@ -1,1 +1,3 @@
-export const packageName = "@sua-marca/styles";
+import "./index.css";
+
+export const stylesVersion = "0.0.0";

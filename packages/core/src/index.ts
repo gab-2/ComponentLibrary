@@ -1,1 +1,3 @@
-export const packageName = "@sua-marca/core";
+export * from "./components/button";
+export * from "./components/input";
+export * from "./components/card";

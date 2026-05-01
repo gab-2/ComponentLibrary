@@ -1,1 +1,2 @@
-export const packageName = "@sua-marca-pro/react";
+import "@sua-marca/styles/src/index.css";
+export * from "./components/DataTable/DataTable";

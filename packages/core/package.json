@@ -3,11 +3,16 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "echo 'core build placeholder'",
-    "lint": "echo 'core lint placeholder'",
-    "test": "echo 'core test placeholder'",
-    "typecheck": "echo 'core typecheck placeholder'"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "echo 'core lint pending rules'",
+    "test": "echo 'core test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "@sua-marca/config-typescript": "workspace:*"
   }
 }

@@ -3,11 +3,21 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/tokens.css",
+    "src/tokens.json"
+  ],
   "scripts": {
-    "build": "echo 'tokens build placeholder'",
-    "lint": "echo 'tokens lint placeholder'",
-    "test": "echo 'tokens test placeholder'",
-    "typecheck": "echo 'tokens typecheck placeholder'"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "echo 'tokens lint pending rules'",
+    "test": "echo 'tokens test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "@sua-marca/config-typescript": "workspace:*"
   }
 }

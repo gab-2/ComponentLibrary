@@ -1,1 +1,4 @@
-export const packageName = "@sua-marca/tokens";
+import tokens from "./tokens.json";
+import "./tokens.css";
+
+export { tokens };

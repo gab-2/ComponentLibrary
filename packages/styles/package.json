@@ -3,11 +3,23 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build": "echo 'styles build placeholder'",
-    "lint": "echo 'styles lint placeholder'",
-    "test": "echo 'styles test placeholder'",
-    "typecheck": "echo 'styles typecheck placeholder'"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "echo 'styles lint pending rules'",
+    "test": "echo 'styles test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sua-marca/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "@sua-marca/config-typescript": "workspace:*"
   }
 }

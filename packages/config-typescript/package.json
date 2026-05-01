@@ -2,5 +2,11 @@
   "name": "@sua-marca/config-typescript",
   "version": "0.0.0",
   "private": true,
-  "main": "base.json"
+  "main": "base.json",
+  "exports": {
+    "./base.json": "./base.json"
+  },
+  "files": [
+    "base.json"
+  ]
 }
