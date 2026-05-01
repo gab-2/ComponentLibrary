@@ -1,10 +1,8 @@
 import { EntitlementStatus, PackageTier, PackageVisibility, PlanCode, PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
-
 const PRO_KEYS = ["pro.packages.access", "pro.docs.access", "registry.tokens.create", "templates.pro.access"];
 
-async function main() {
+export async function runSeed(prisma: Pick<PrismaClient, "user" | "subscription" | "license" | "entitlement" | "package">) {
   const free = await prisma.user.upsert({
     where: { email: "free@example.com" },
     update: {},
@@ -56,8 +54,20 @@ async function main() {
     await prisma.package.upsert({ where: { name: pkg.name }, update: pkg, create: pkg });
   }
 
-  console.log("Seeded users:", { free: free.email, pro: pro.email, lifetime: lifetime.email });
-  console.log("Seeded packages:", packages.map((pkg) => pkg.name));
+  return { users: { free: free.email, pro: pro.email, lifetime: lifetime.email }, packages: packages.map((pkg) => pkg.name) };
 }
 
-main().finally(async () => prisma.$disconnect());
+async function main() {
+  const prisma = new PrismaClient();
+  try {
+    const seeded = await runSeed(prisma);
+    console.log("Seeded users:", seeded.users);
+    console.log("Seeded packages:", seeded.packages);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) {
+  main();
+}

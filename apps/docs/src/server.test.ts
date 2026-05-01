@@ -1,20 +1,15 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import test from "node:test";
+import assert from "node:assert/strict";
 import { docsServer } from "./server";
 
-const fetchMock = vi.fn();
-vi.stubGlobal("fetch", fetchMock);
+(globalThis as any).fetch = async () => ({ ok: true, json: async () => ({ access: { canAccessPro: false } }) });
 
-describe("docs server", () => {
-  beforeEach(() => vi.clearAllMocks());
+test("serves public docs", async () => {
+  const response = await docsServer.inject({ method: "GET", url: "/docs/public" });
+  assert.equal(response.statusCode, 200);
+});
 
-  it("serves public docs", async () => {
-    const response = await docsServer.inject({ method: "GET", url: "/docs/public" });
-    expect(response.statusCode).toBe(200);
-  });
-
-  it("gates pro docs when missing entitlement", async () => {
-    fetchMock.mockResolvedValue({ ok: true, json: async () => ({ access: { canAccessPro: false } }) });
-    const response = await docsServer.inject({ method: "GET", url: "/docs/pro/react?email=free@example.com" });
-    expect(response.statusCode).toBe(403);
-  });
+test("gates pro docs", async () => {
+  const response = await docsServer.inject({ method: "GET", url: "/docs/pro/react?email=free@example.com" });
+  assert.equal(response.statusCode, 403);
 });

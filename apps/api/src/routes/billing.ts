@@ -66,7 +66,7 @@ export async function registerBillingRoutes(app: FastifyInstance) {
     return { checkoutUrl: session.url };
   });
 
-  app.post("/billing/portal", async (request, reply) => {
+  const customerPortalHandler = async (request: any, reply: any) => {
     const body = request.body as { email?: string; returnUrl?: string };
     if (!body.email || !body.returnUrl) {
       reply.code(400);
@@ -75,9 +75,11 @@ export async function registerBillingRoutes(app: FastifyInstance) {
 
     const session = await createCustomerPortalSession({ customerEmail: body.email, returnUrl: body.returnUrl });
     return { portalUrl: session.url };
-  });
+  };
+  app.post("/billing/customer-portal", customerPortalHandler);
+  app.post("/billing/portal", customerPortalHandler);
 
-  app.post("/billing/webhooks/stripe", async (request, reply) => {
+  const stripeWebhookHandler = async (request: any, reply: any) => {
     const signature = request.headers["stripe-signature"] as string | undefined;
     const payload = JSON.stringify(request.body ?? {});
 
@@ -146,5 +148,7 @@ export async function registerBillingRoutes(app: FastifyInstance) {
     }
 
     return { received: true, idempotent: false };
-  });
+  };
+  app.post("/billing/webhook", stripeWebhookHandler);
+  app.post("/billing/webhooks/stripe", stripeWebhookHandler);
 }

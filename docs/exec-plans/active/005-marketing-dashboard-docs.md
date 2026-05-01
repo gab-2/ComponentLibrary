@@ -379,17 +379,17 @@ Run lint, typecheck, tests and build.
 
 ## Progress
 
-- [ ] Internal UI package created
-- [ ] Shared app Button created
-- [ ] Shared app Card created
-- [ ] Shared app CodeBlock created
-- [ ] Shared app PricingCard created
-- [ ] Marketing app scaffolded
-- [ ] Landing page created
-- [ ] Pricing page created
-- [ ] Component preview page created
-- [ ] Free component showcase created
-- [ ] Pro locked preview created
+- [x] Internal UI package created
+- [x] Shared app Button created
+- [x] Shared app Card created
+- [x] Shared app CodeBlock created
+- [x] Shared app PricingCard created
+- [x] Marketing app scaffolded
+- [x] Landing page created
+- [x] Pricing page created
+- [x] Component preview page created
+- [x] Free component showcase created
+- [x] Pro locked preview created
 - [x] Dashboard app scaffolded
 - [x] Dashboard overview created
 - [x] Billing page created
@@ -399,15 +399,15 @@ Run lint, typecheck, tests and build.
 - [x] Install instructions page created
 - [x] Docs app scaffolded
 - [x] Public docs created
-- [ ] React docs created
+- [x] React docs created
 - [x] React Pro docs gated
-- [ ] Vue docs created
-- [ ] Angular docs created
-- [ ] Svelte docs created
-- [ ] Web Components docs created
+- [x] Vue docs created
+- [x] Angular docs created
+- [x] Svelte docs created
+- [x] Web Components docs created
 - [x] Access-aware UI implemented
-- [ ] Build verified
-- [ ] Lint verified
+- [x] Build verified
+- [x] Lint verified
 - [x] Typecheck verified
 - [x] Tests verified
 
