@@ -52,13 +52,67 @@ importers:
         specifier: ^2.1.9
         version: 2.1.9(@types/node@22.19.17)
 
-  apps/dashboard: {}
+  apps/dashboard:
+    dependencies:
+      fastify:
+        specifier: ^5.3.2
+        version: 5.8.5
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.30
+        version: 22.19.17
+      tsx:
+        specifier: ^4.20.0
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.9
+        version: 2.1.9(@types/node@22.19.17)
 
-  apps/docs: {}
+  apps/docs:
+    dependencies:
+      fastify:
+        specifier: ^5.3.2
+        version: 5.8.5
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.30
+        version: 22.19.17
+      tsx:
+        specifier: ^4.20.0
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.9
+        version: 2.1.9(@types/node@22.19.17)
 
   apps/marketing: {}
 
-  apps/registry: {}
+  apps/registry:
+    dependencies:
+      '@sua-marca/registry-client':
+        specifier: workspace:*
+        version: link:../../packages/registry-client
+      fastify:
+        specifier: ^5.3.2
+        version: 5.8.5
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.30
+        version: 22.19.17
+      tsx:
+        specifier: ^4.20.0
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.9
+        version: 2.1.9(@types/node@22.19.17)
 
   apps/storybook: {}
 
@@ -193,7 +247,14 @@ importers:
         specifier: ^5.7.2
         version: 5.9.3
 
-  packages/registry-client: {}
+  packages/registry-client:
+    devDependencies:
+      tsup:
+        specifier: ^8.5.1
+        version: 8.5.1(jiti@2.6.1)(postcss@8.5.13)(tsx@4.21.0)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
 
   packages/styles:
     dependencies:

@@ -1,1 +1,1 @@
-export const registryApp = "@sua-marca/registry";
+export { registryServer } from "./server";

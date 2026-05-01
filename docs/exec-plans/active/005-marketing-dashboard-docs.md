@@ -390,26 +390,26 @@ Run lint, typecheck, tests and build.
 - [ ] Component preview page created
 - [ ] Free component showcase created
 - [ ] Pro locked preview created
-- [ ] Dashboard app scaffolded
-- [ ] Dashboard overview created
-- [ ] Billing page created
-- [ ] Token list page created
-- [ ] Token creation UI created
-- [ ] Token revocation UI created
-- [ ] Install instructions page created
-- [ ] Docs app scaffolded
-- [ ] Public docs created
+- [x] Dashboard app scaffolded
+- [x] Dashboard overview created
+- [x] Billing page created
+- [x] Token list page created
+- [x] Token creation UI created
+- [x] Token revocation UI created
+- [x] Install instructions page created
+- [x] Docs app scaffolded
+- [x] Public docs created
 - [ ] React docs created
-- [ ] React Pro docs gated
+- [x] React Pro docs gated
 - [ ] Vue docs created
 - [ ] Angular docs created
 - [ ] Svelte docs created
 - [ ] Web Components docs created
-- [ ] Access-aware UI implemented
+- [x] Access-aware UI implemented
 - [ ] Build verified
 - [ ] Lint verified
-- [ ] Typecheck verified
-- [ ] Tests verified
+- [x] Typecheck verified
+- [x] Tests verified
 
 ## Decision Log
 
@@ -430,6 +430,18 @@ Private docs are part of the paid value and may expose private package usage det
 Reason:
 
 Marketing needs to demonstrate value without exposing paid implementation details.
+
+### Decision: Start Sprint 2 with Dashboard token flows
+
+Reason:
+
+Sprint 2 starts with account-critical capabilities (token management and installation instructions) before marketing/docs polish, enabling immediate paid-package onboarding.
+
+### Decision: Implement docs gating through API access snapshot
+
+Reason:
+
+Private documentation access is bound to the same entitlement model used by registry authorization, keeping paid access rules centralized on backend state.
 
 ## Risks
 

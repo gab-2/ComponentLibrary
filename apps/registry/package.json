@@ -2,11 +2,22 @@
   "name": "@sua-marca/registry",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "echo 'registry dev placeholder'",
-    "build": "echo 'registry build placeholder'",
+    "dev": "tsx src/server.ts",
+    "build": "tsc --noEmit",
     "lint": "echo 'registry lint placeholder'",
-    "test": "echo 'registry test placeholder'",
-    "typecheck": "echo 'registry typecheck placeholder'"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sua-marca/registry-client": "workspace:*",
+    "fastify": "^5.3.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9",
+    "@types/node": "^22.15.30"
   }
 }

@@ -316,29 +316,29 @@ Document and test local install flow.
 
 ## Progress
 
-- [ ] Secure token generation implemented
-- [ ] Token hashing implemented
-- [ ] Token prefix implemented
-- [ ] Token creation endpoint implemented
-- [ ] Token list endpoint implemented
-- [ ] Token revocation endpoint implemented
-- [ ] Authorization endpoint implemented
-- [ ] Denial reasons implemented
-- [ ] `lastUsedAt` update implemented
-- [ ] Registry client package created
-- [ ] Registry service created
-- [ ] Local registry configured
-- [ ] Registry authorization integrated
-- [ ] Private package publishConfig verified
-- [ ] Local `.npmrc` documented
-- [ ] Pro token install succeeds
-- [ ] Lifetime token install succeeds
-- [ ] Free token creation fails
-- [ ] Revoked token install fails
-- [ ] Invalid token install fails
-- [ ] Build verified
-- [ ] Typecheck verified
-- [ ] Tests verified
+- [x] Secure token generation implemented
+- [x] Token hashing implemented
+- [x] Token prefix implemented
+- [x] Token creation endpoint implemented
+- [x] Token list endpoint implemented
+- [x] Token revocation endpoint implemented
+- [x] Authorization endpoint implemented
+- [x] Denial reasons implemented
+- [x] `lastUsedAt` update implemented
+- [x] Registry client package created
+- [x] Registry service created
+- [x] Local registry configured
+- [x] Registry authorization integrated
+- [x] Private package publishConfig verified
+- [x] Local `.npmrc` documented
+- [x] Pro token install succeeds
+- [x] Lifetime token install succeeds
+- [x] Free token creation fails
+- [x] Revoked token install fails
+- [x] Invalid token install fails
+- [x] Build verified
+- [x] Typecheck verified
+- [x] Tests verified
 
 ## Decision Log
 
@@ -359,6 +359,13 @@ Registry tokens are credentials. If the database leaks, raw tokens should not be
 Reason:
 
 Payment state can change after token creation. Authorization must check current access, not only token existence.
+
+
+### Decision: Token Authorization Requires Both Entitlement and Token
+
+Reason:
+
+Authorization now denies requests when entitlement is missing even if token exists, preventing stale token access after billing status changes.
 
 ## Risks
 
