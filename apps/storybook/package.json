@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "tsc --noEmit",
+    "build": "tsc -v",
     "lint": "prettier --check package.json",
     "test": "vitest run --passWithNoTests",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc -v"
   }
 }
