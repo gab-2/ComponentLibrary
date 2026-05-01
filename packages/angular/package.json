@@ -1,0 +1,14 @@
+{
+  "name": "@sua-marca/angular",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo build angular",
+    "lint": "echo lint angular",
+    "typecheck": "echo typecheck angular",
+    "test": "echo test angular"
+  }
+}

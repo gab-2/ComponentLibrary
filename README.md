@@ -378,3 +378,7 @@ The repository is ready when:
 - revoked tokens fail;
 - public and private packages are separated;
 - docs explain how to extend the platform.
+
+## Implementation status
+
+See `docs/IMPLEMENTATION_STATUS.md` for current scaffold coverage, known gaps, and local validation commands.

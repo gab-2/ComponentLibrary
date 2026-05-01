@@ -1,0 +1,14 @@
+{
+  "name": "@sua-marca/svelte",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo build svelte",
+    "lint": "echo lint svelte",
+    "typecheck": "echo typecheck svelte",
+    "test": "echo test svelte"
+  }
+}

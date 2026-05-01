@@ -475,3 +475,9 @@ This plan is complete when:
 - unauthorized users cannot see private install details;
 - Pro or Lifetime users can see private docs;
 - build, lint, typecheck and tests pass.
+
+### Decision: Static-only validation in this environment
+
+Reason:
+
+pnpm bootstrap is proxy-blocked here; full runtime checks must run in local/CI.

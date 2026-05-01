@@ -408,3 +408,9 @@ This plan is complete when:
 - private packages require private registry configuration;
 - public packages do not import private packages;
 - build, lint, typecheck, tests and security checks pass.
+
+### Decision: Static-only validation in this environment
+
+Reason:
+
+pnpm bootstrap is proxy-blocked here; full runtime checks must run in local/CI.

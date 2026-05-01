@@ -1,0 +1,17 @@
+{
+  "name": "@sua-marca/api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.ts",
+    "build": "echo build api",
+    "lint": "echo lint api",
+    "typecheck": "echo typecheck api",
+    "test": "echo test api"
+  },
+  "dependencies": {
+    "@sua-marca/billing": "workspace:*",
+    "@sua-marca/entitlement": "workspace:*"
+  }
+}
