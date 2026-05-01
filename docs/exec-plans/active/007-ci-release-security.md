@@ -327,25 +327,25 @@ Run local checks and update docs.
 
 ## Progress
 
-- [ ] Changesets configured
-- [ ] CI workflow created
-- [ ] E2E workflow created
-- [ ] Public release workflow created
-- [ ] Private release workflow created
-- [ ] Package boundary check script created
-- [ ] Private publish config check script created
-- [ ] Secret check script created
-- [ ] Root security scripts added
-- [ ] CI runs security scripts
-- [ ] Release docs updated
-- [ ] Security docs updated
-- [ ] Build verified
-- [ ] Lint verified
-- [ ] Typecheck verified
-- [ ] Tests verified
-- [ ] Boundary checks verified
-- [ ] Private publish checks verified
-- [ ] Secret checks verified
+- [x] Changesets configured
+- [x] CI workflow created
+- [x] E2E workflow created
+- [x] Public release workflow created
+- [x] Private release workflow created
+- [x] Package boundary check script created
+- [x] Private publish config check script created
+- [x] Secret check script created
+- [x] Root security scripts added
+- [x] CI runs security scripts
+- [x] Release docs updated
+- [x] Security docs updated
+- [x] Build verified
+- [x] Lint verified
+- [x] Typecheck verified
+- [x] Tests verified
+- [x] Boundary checks verified
+- [x] Private publish checks verified
+- [x] Secret checks verified
 
 ## Decision Log
 
@@ -408,3 +408,9 @@ This plan is complete when:
 - private packages require private registry configuration;
 - public packages do not import private packages;
 - build, lint, typecheck, tests and security checks pass.
+
+### Decision: Secret scanning excludes documentation samples
+
+Reason:
+
+Documentation intentionally contains safe examples like `_authToken=USER_TOKEN` and token prefixes. The scanner targets executable/config files to reduce false positives while still protecting real credentials.
