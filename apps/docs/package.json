@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx src/server.ts",
+    "dev": "echo 'Docs dev server running on http://localhost:3003 (process remains active by design)' && tsx src/server.ts",
     "build": "tsc --noEmit",
     "lint": "echo 'docs lint placeholder'",
     "test": "tsx --test src/server.test.ts",
