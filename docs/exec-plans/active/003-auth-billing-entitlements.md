@@ -387,25 +387,25 @@ Add tests for:
 
 ## Progress
 
-- [ ] Prisma schema created
+- [x] Prisma schema created
 - [ ] Database migrations added
 - [ ] Database client exported
-- [ ] Seed users created
+- [x] Seed users created
 - [ ] Seed packages created
-- [ ] Free user has no Pro entitlement
-- [ ] Pro user has active Pro entitlement
-- [ ] Lifetime user has permanent Pro entitlement
-- [ ] Entitlement package created
-- [ ] Billing package created
-- [ ] Stripe provider added
-- [ ] Subscription status normalization added
-- [ ] API server created
+- [x] Free user has no Pro entitlement
+- [x] Pro user has active Pro entitlement
+- [x] Lifetime user has permanent Pro entitlement
+- [x] Entitlement package created
+- [x] Billing package created
+- [x] Stripe provider added
+- [x] Subscription status normalization added
+- [x] API server created
 - [ ] Auth foundation added
-- [ ] Billing checkout endpoint added
-- [ ] Customer portal endpoint added
-- [ ] Billing status endpoint added
-- [ ] Stripe webhook endpoint added
-- [ ] Webhook idempotency implemented
+- [x] Billing checkout endpoint added
+- [x] Customer portal endpoint added
+- [x] Billing status endpoint added
+- [x] Stripe webhook endpoint added
+- [x] Webhook idempotency implemented
 - [ ] Entitlement sync implemented
 - [ ] Access rule tests added
 - [ ] Webhook tests added
@@ -477,3 +477,9 @@ This plan is complete when:
 - subscription cancellation does not remove Lifetime access;
 - tests cover entitlement rules;
 - build, typecheck and tests pass.
+
+### Decision: Scaffold Stripe provider interfaces before external credentials
+
+Reason:
+
+Implement lightweight provider-compatible functions and webhook verification boundaries now, so real Stripe SDK wiring can be added without route redesign.
