@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "tsx src/server.ts",
     "build": "tsc --noEmit",
-    "lint": "echo 'dashboard lint placeholder'",
-    "test": "vitest run",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

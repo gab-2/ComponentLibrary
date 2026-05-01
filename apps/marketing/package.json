@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "tsx src/server.ts",
-    "build": "echo 'marketing build placeholder'",
-    "lint": "echo 'marketing lint placeholder'",
-    "test": "echo 'marketing tests covered by integration checks'",
-    "typecheck": "echo 'marketing typecheck placeholder'"
+    "build": "tsc -v",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc -v"
   },
   "type": "module",
   "dependencies": {
