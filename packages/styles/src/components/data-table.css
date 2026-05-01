@@ -1,0 +1,36 @@
+.sm-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--sm-color-neutral-0);
+  border: 1px solid var(--sm-color-neutral-200);
+  border-radius: var(--sm-radius-lg);
+  overflow: hidden;
+}
+
+.sm-data-table th,
+.sm-data-table td {
+  padding: var(--sm-spacing-3) var(--sm-spacing-4);
+  text-align: left;
+}
+
+.sm-data-table thead th {
+  font-size: var(--sm-font-size-sm);
+  font-weight: var(--sm-font-weight-semibold);
+  color: var(--sm-color-neutral-700);
+  background: var(--sm-color-neutral-50);
+  border-bottom: 1px solid var(--sm-color-neutral-200);
+}
+
+.sm-data-table tbody td {
+  border-top: 1px solid var(--sm-color-neutral-100);
+  color: var(--sm-color-neutral-800);
+}
+
+.sm-data-table tbody tr:hover {
+  background: color-mix(in oklab, var(--sm-color-primary-50) 35%, var(--sm-color-neutral-0));
+}
+
+.sm-data-table__empty {
+  text-align: center;
+  color: var(--sm-color-neutral-500);
+}

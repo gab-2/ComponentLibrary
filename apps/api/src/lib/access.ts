@@ -8,7 +8,7 @@ export type AccessSnapshot = {
 
 export function computeAccess(snapshot: AccessSnapshot) {
   const hasActiveProEntitlement = snapshot.entitlements.some(
-    (entry) => entry.key === "pro:packages" && entry.status === "ACTIVE",
+    (entry) => entry.key === "pro.packages.access" && entry.status === "ACTIVE",
   );
 
   const hasActiveSubscription = snapshot.subscriptions.some(
