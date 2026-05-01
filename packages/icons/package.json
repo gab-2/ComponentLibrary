@@ -3,11 +3,20 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "echo 'icons build placeholder'",
-    "lint": "echo 'icons lint placeholder'",
-    "test": "echo 'icons test placeholder'",
-    "typecheck": "echo 'icons typecheck placeholder'"
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "lint": "echo 'icons lint pending rules'",
+    "test": "echo 'icons test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
   }
 }
