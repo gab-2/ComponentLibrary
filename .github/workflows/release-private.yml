@@ -1,0 +1,31 @@
+name: Release Private
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  release-private:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm build
+      - run: pnpm check:boundaries
+      - run: pnpm check:private-publish
+      - run: pnpm check:secrets
+      - name: Configure private registry auth
+        run: |
+          pnpm config set @sua-marca-pro:registry "${{ secrets.PRIVATE_REGISTRY_URL }}"
+          pnpm config set "//${{ secrets.PRIVATE_REGISTRY_URL#https:// }}/:_authToken" "${{ secrets.PRIVATE_REGISTRY_TOKEN }}"
+      - name: Publish private packages only
+        run: pnpm -r --filter "@sua-marca-pro/*" publish --no-git-checks

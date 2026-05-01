@@ -1,1 +1,1 @@
-export const packageName = "@sua-marca-pro/angular";
+export * from "./components/data-table.component";
