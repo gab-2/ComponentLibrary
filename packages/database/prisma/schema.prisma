@@ -19,29 +19,41 @@ enum EntitlementStatus {
   INACTIVE
 }
 
+enum PackageVisibility {
+  PUBLIC
+  PRIVATE
+}
+
+enum PackageTier {
+  FREE
+  PRO
+}
+
 model User {
-  id            String         @id @default(cuid())
-  email         String         @unique
-  name          String?
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
-  subscriptions Subscription[]
-  licenses      License[]
-  entitlements  Entitlement[]
+  id             String          @id @default(cuid())
+  email          String          @unique
+  name           String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  subscriptions  Subscription[]
+  licenses       License[]
+  entitlements   Entitlement[]
   registryTokens RegistryToken[]
+  packageAccess  PackageAccess[]
 }
 
 model Subscription {
-  id              String   @id @default(cuid())
-  userId          String
-  provider        String
-  providerRef     String   @unique
-  plan            PlanCode
-  status          String
-  currentPeriodEnd DateTime?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                 String    @id @default(cuid())
+  userId             String
+  provider           String
+  providerRef        String    @unique
+  plan               PlanCode
+  status             String
+  currentPeriodEnd   DateTime?
+  cancelAtPeriodEnd  Boolean   @default(false)
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model License {
@@ -51,6 +63,8 @@ model License {
   active     Boolean  @default(true)
   grantedAt  DateTime @default(now())
   revokedAt  DateTime?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
   user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
@@ -59,6 +73,7 @@ model Entitlement {
   userId     String
   key        String
   status     EntitlementStatus @default(ACTIVE)
+  source     String?
   createdAt  DateTime          @default(now())
   updatedAt  DateTime          @updatedAt
   user       User              @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -69,28 +84,55 @@ model Entitlement {
 model RegistryToken {
   id          String   @id @default(cuid())
   userId      String
+  name        String?
   tokenHash   String   @unique
   tokenPrefix String
   revokedAt   DateTime?
+  expiresAt   DateTime?
   createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
   lastUsedAt  DateTime?
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model AuditLog {
+model Package {
+  id          String          @id @default(cuid())
+  name        String          @unique
+  scope       String
+  visibility  PackageVisibility
+  framework   String
+  tier        PackageTier
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  access      PackageAccess[]
+}
+
+model PackageAccess {
   id         String   @id @default(cuid())
-  actorUserId String?
-  action     String
-  resource   String
-  metadata   Json?
+  userId     String
+  packageId  String
   createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pkg        Package  @relation(fields: [packageId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, packageId])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  actorUserId String?
+  action      String
+  resource    String
+  metadata    Json?
+  createdAt   DateTime @default(now())
 }
 
 model WebhookEvent {
-  id             String   @id @default(cuid())
-  provider       String
-  providerEventId String  @unique
-  payload        Json
-  processedAt    DateTime?
-  createdAt      DateTime @default(now())
+  id              String   @id @default(cuid())
+  provider        String
+  providerEventId String   @unique
+  payload         Json
+  processedAt     DateTime?
+  createdAt       DateTime @default(now())
 }

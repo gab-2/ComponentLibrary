@@ -388,10 +388,10 @@ Add tests for:
 ## Progress
 
 - [x] Prisma schema created
-- [ ] Database migrations added
-- [ ] Database client exported
+- [x] Database migrations added
+- [x] Database client exported
 - [x] Seed users created
-- [ ] Seed packages created
+- [x] Seed packages created
 - [x] Free user has no Pro entitlement
 - [x] Pro user has active Pro entitlement
 - [x] Lifetime user has permanent Pro entitlement
@@ -400,20 +400,20 @@ Add tests for:
 - [x] Stripe provider added
 - [x] Subscription status normalization added
 - [x] API server created
-- [ ] Auth foundation added
+- [x] Auth foundation added
 - [x] Billing checkout endpoint added
 - [x] Customer portal endpoint added
 - [x] Billing status endpoint added
 - [x] Stripe webhook endpoint added
 - [x] Webhook idempotency implemented
-- [ ] Entitlement sync implemented
-- [ ] Access rule tests added
-- [ ] Webhook tests added
+- [x] Entitlement sync implemented
+- [x] Access rule tests added
+- [x] Webhook tests added
 - [ ] Migration verified
 - [ ] Seed verified
-- [ ] Build verified
-- [ ] Typecheck verified
-- [ ] Tests verified
+- [x] Build verified
+- [x] Typecheck verified
+- [x] Tests verified
 
 ## Decision Log
 
@@ -434,6 +434,12 @@ Billing status, Lifetime licenses and registry access all need a common authoriz
 Reason:
 
 Frontend success pages can be spoofed or interrupted. Provider webhooks must confirm payment state before access is granted.
+
+### Decision: Use canonical dotted entitlement keys in API access and webhook sync
+
+Reason:
+
+Using one canonical key format (`pro.packages.access`) avoids mismatches between seed data, webhook updates and authorization checks.
 
 ## Risks
 

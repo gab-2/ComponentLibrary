@@ -8,6 +8,7 @@ import {
 } from "@sua-marca/billing";
 import { db } from "../lib/db";
 import { deriveEntitlementUpdateFromStripeEvent } from "../lib/billing-webhook";
+import { buildEntitlementUpdates } from "../lib/entitlement-sync";
 
 export async function registerBillingRoutes(app: FastifyInstance) {
   app.get("/billing/status", async (request, reply) => {
@@ -129,15 +130,18 @@ export async function registerBillingRoutes(app: FastifyInstance) {
           },
         });
 
-        await db.entitlement.upsert({
-          where: { userId_key: { userId: user.id, key: "pro:packages" } },
-          update: { status: update.entitlementShouldBeActive ? "ACTIVE" : "INACTIVE" },
-          create: {
-            userId: user.id,
-            key: "pro:packages",
-            status: update.entitlementShouldBeActive ? "ACTIVE" : "INACTIVE",
-          },
-        });
+        for (const entitlement of buildEntitlementUpdates(update.entitlementShouldBeActive)) {
+          await db.entitlement.upsert({
+            where: { userId_key: { userId: user.id, key: entitlement.key } },
+            update: { status: entitlement.status, source: "stripe_webhook" },
+            create: {
+              userId: user.id,
+              key: entitlement.key,
+              status: entitlement.status,
+              source: "stripe_webhook",
+            },
+          });
+        }
       }
     }
 

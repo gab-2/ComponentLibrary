@@ -336,33 +336,33 @@ Run verification commands.
 - [x] Button styles created
 - [x] Input styles created
 - [x] Card styles created
-- [ ] Badge styles created
-- [ ] Alert styles created
-- [ ] Modal styles created
-- [ ] DataTable styles created
+- [x] Badge styles created
+- [x] Alert styles created
+- [x] Modal styles created
+- [x] DataTable styles created
 - [x] Core package created
 - [x] Button core helper created
 - [x] Input core helper created
 - [x] Card core helper created
-- [ ] DataTable helpers created
-- [ ] Icons package created
+- [x] DataTable helpers created
+- [x] Icons package created
 - [x] React free package created
 - [x] React Button created
 - [x] React Input created
 - [x] React Card created
-- [ ] React Badge created
-- [ ] React Alert created
-- [ ] React Modal created
+- [x] React Badge created
+- [x] React Alert created
+- [x] React Modal created
 - [x] React Pro package created
 - [x] React Pro DataTable created
-- [ ] React Pro DatePicker or Calendar created
-- [ ] React Pro CommandMenu or MultiSelect created
+- [x] React Pro DatePicker or Calendar created
+- [x] React Pro CommandMenu or MultiSelect created
 - [x] Private package publishConfig added
-- [ ] Core tests added
+- [x] Core tests added
 - [x] Build verified
 - [x] Lint verified
 - [x] Typecheck verified
-- [ ] Tests verified
+- [x] Tests verified
 
 ## Decision Log
 
@@ -383,6 +383,13 @@ Multiple frameworks need a consistent design language without duplicating hardco
 Reason:
 
 DataTable, Select, CommandMenu and other complex components need logic that can be shared across React, Vue, Angular and Svelte.
+
+
+### Decision: Add shared DataTable stylesheet in packages/styles
+
+Reason:
+
+The Pro React DataTable should consume design tokens from the shared styles layer to preserve the required `tokens -> styles -> core -> adapters` architecture.
 
 ## Risks
 

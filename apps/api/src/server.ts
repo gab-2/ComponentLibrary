@@ -2,12 +2,14 @@ import Fastify from "fastify";
 import { registerMeRoutes } from "./routes/me";
 import { registerRegistryRoutes } from "./routes/registry";
 import { registerBillingRoutes } from "./routes/billing";
+import { registerAuthRoutes } from "./routes/auth";
 
 export function buildServer() {
   const app = Fastify({ logger: true });
 
   app.get("/health", async () => ({ status: "ok" }));
 
+  registerAuthRoutes(app);
   registerMeRoutes(app);
   registerRegistryRoutes(app);
   registerBillingRoutes(app);
