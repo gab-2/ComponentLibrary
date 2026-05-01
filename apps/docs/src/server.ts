@@ -1,4 +1,5 @@
 import Fastify from "fastify";
+import { pathToFileURL } from "node:url";
 
 const app = Fastify({ logger: true });
 const apiBaseUrl = process.env.API_BASE_URL ?? "http://localhost:4000";
@@ -34,11 +35,17 @@ app.get("/docs/pro/react", async (request, reply) => {
   };
 });
 
-if (process.env.NODE_ENV !== "test") {
-  app.listen({ port: 3003, host: "0.0.0.0" }).catch((error) => {
+async function startDocsServer() {
+  await app.listen({ port: 3003, host: "0.0.0.0" });
+}
+
+const isEntrypoint = process.argv[1] ? import.meta.url === pathToFileURL(process.argv[1]).href : false;
+
+if (isEntrypoint) {
+  startDocsServer().catch((error) => {
     app.log.error(error);
     process.exit(1);
   });
 }
 
-export { app as docsServer };
+export { app as docsServer, startDocsServer };
