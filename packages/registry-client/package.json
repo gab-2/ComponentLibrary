@@ -3,11 +3,24 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
-    "build": "echo 'registry-client build placeholder'",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
     "lint": "echo 'registry-client lint placeholder'",
     "test": "echo 'registry-client test placeholder'",
-    "typecheck": "echo 'registry-client typecheck placeholder'"
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   }
 }

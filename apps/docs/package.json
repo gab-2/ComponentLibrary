@@ -2,11 +2,21 @@
   "name": "@sua-marca/docs",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "echo 'docs dev placeholder'",
-    "build": "echo 'docs build placeholder'",
+    "dev": "tsx src/server.ts",
+    "build": "tsc --noEmit",
     "lint": "echo 'docs lint placeholder'",
-    "test": "echo 'docs test placeholder'",
-    "typecheck": "echo 'docs typecheck placeholder'"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fastify": "^5.3.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9",
+    "@types/node": "^22.15.30"
   }
 }

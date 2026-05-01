@@ -1,1 +1,1 @@
-export const dashboardApp = "@sua-marca/dashboard";
+export { dashboardServer } from "./server";
