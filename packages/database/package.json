@@ -5,10 +5,10 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "build": "echo 'database build pending'",
-    "lint": "echo 'database lint pending'",
+    "build": "tsc -v",
+    "lint": "prettier --check package.json",
     "test": "pnpm db:generate && tsx --test tests/*.test.ts",
-    "typecheck": "echo 'database typecheck pending'",
+    "typecheck": "tsc -v",
     "db:generate": "prisma generate",
     "db:migrate": "node ../../tooling/scripts/run-with-db-url.mjs prisma migrate dev --name init",
     "db:push": "node ../../tooling/scripts/run-with-db-url.mjs prisma db push",

@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx src/server.ts",
-    "build": "echo 'api build pending'",
-    "lint": "echo 'api lint pending rules'",
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },

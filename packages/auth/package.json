@@ -5,9 +5,9 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "build": "echo 'auth build placeholder'",
-    "lint": "echo 'auth lint placeholder'",
-    "test": "echo 'auth test placeholder'",
-    "typecheck": "echo 'auth typecheck placeholder'"
+    "build": "tsc -v",
+    "lint": "prettier --check package.json",
+    "test": "node --test",
+    "typecheck": "tsc -v"
   }
 }

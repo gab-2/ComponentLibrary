@@ -5,9 +5,9 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "build": "echo 'ui-internal build placeholder'",
-    "lint": "echo 'ui-internal lint placeholder'",
-    "test": "echo 'ui-internal test placeholder'",
-    "typecheck": "echo 'ui-internal typecheck placeholder'"
+    "build": "tsc -v",
+    "lint": "prettier --check package.json",
+    "test": "node --test",
+    "typecheck": "tsc -v"
   }
 }
