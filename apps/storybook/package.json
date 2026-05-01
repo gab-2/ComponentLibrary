@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node -e \"console.log('storybook dev scaffold')\"",
-    "build": "node -e \"console.log('storybook build scaffold')\"",
-    "lint": "prettier --check package.json",
-    "test": "node -e \"console.log('storybook tests scaffold')\"",
-    "typecheck": "node -e \"console.log('storybook typecheck scaffold')\""
+    "dev": "tsx src/index.ts",
+    "build": "tsc -v",
+    "lint": "prettier --check \"src/**/*.ts\" \"stories/**/*.ts\" package.json",
+    "test": "node --test",
+    "typecheck": "tsc -v"
   }
 }

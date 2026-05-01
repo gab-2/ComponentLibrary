@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -v",
     "lint": "prettier --check package.json",
-    "test": "vitest run --passWithNoTests",
+    "test": "node --test",
     "typecheck": "tsc -v"
   }
 }
