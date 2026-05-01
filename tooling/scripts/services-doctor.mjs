@@ -1,9 +1,10 @@
 import { execSync } from 'node:child_process';
 import net from 'node:net';
 
-function hasCommand(command) {
+function hasDocker() {
   try {
-    execSync(`command -v ${command}`, { stdio: 'ignore' });
+    execSync('docker --version', { stdio: 'ignore' });
+    execSync('docker compose version', { stdio: 'ignore' });
     return true;
   } catch {
     return false;
@@ -29,7 +30,7 @@ function checkPort(host, port) {
   });
 }
 
-const dockerOk = hasCommand('docker');
+const dockerOk = hasDocker();
 const postgresOk = await checkPort('localhost', 5432);
 const registryOk = await checkPort('localhost', 4873);
 

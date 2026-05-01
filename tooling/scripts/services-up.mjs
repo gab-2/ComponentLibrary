@@ -2,7 +2,8 @@ import { execSync } from 'node:child_process';
 
 function hasDocker() {
   try {
-    execSync('command -v docker', { stdio: 'ignore' });
+    execSync('docker --version', { stdio: 'ignore' });
+    execSync('docker compose version', { stdio: 'ignore' });
     return true;
   } catch {
     return false;
