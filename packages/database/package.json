@@ -1,0 +1,18 @@
+{
+  "name": "@sua-marca/database",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "node -e \"console.log('build scaffold: @sua-marca/database')\"",
+    "lint": "node -e \"console.log('lint scaffold: @sua-marca/database')\"",
+    "typecheck": "node -e \"console.log('typecheck scaffold: @sua-marca/database')\"",
+    "test": "node -e \"console.log('test scaffold: @sua-marca/database')\"",
+    "db:generate": "node -e \"console.log('db generate scaffold')\"",
+    "db:migrate": "node -e \"console.log('db migrate scaffold')\"",
+    "db:push": "node -e \"console.log('db push scaffold')\"",
+    "db:seed": "node -e \"console.log('db seed scaffold')\""
+  }
+}

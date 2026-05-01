@@ -228,17 +228,17 @@ Run the verification commands and fix failures.
 
 ## Progress
 
-- [ ] Root workspace configured
-- [ ] Turborepo configured
-- [ ] Base TypeScript config added
-- [ ] ESLint config added
-- [ ] Prettier config added
-- [ ] App directories created
-- [ ] Package directories created
-- [ ] Config packages created
-- [ ] Docker Compose created
-- [ ] PostgreSQL local service configured
-- [ ] Registry local service scaffolded
+- [x] Root workspace configured
+- [x] Turborepo configured
+- [x] Base TypeScript config added
+- [x] ESLint config added
+- [x] Prettier config added
+- [x] App directories created
+- [x] Package directories created
+- [x] Config packages created
+- [x] Docker Compose created
+- [x] PostgreSQL local service configured
+- [x] Registry local service scaffolded
 - [ ] Root scripts verified
 - [ ] Build verified
 - [ ] Lint verified
@@ -297,3 +297,9 @@ This plan is complete when:
 - Docker Compose includes PostgreSQL;
 - Docker Compose includes a registry service or scaffold;
 - the repository structure matches the architecture docs.
+
+### Decision: Scaffold apps/packages with placeholder scripts
+
+Reason:
+
+To satisfy the foundation plan quickly while preserving room for detailed implementation in subsequent ExecPlans.

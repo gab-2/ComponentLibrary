@@ -1,0 +1,15 @@
+{
+  "name": "@sua-marca/billing",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "node -e \"console.log('build scaffold: @sua-marca/billing')\"",
+    "lint": "node -e \"console.log('lint scaffold: @sua-marca/billing')\"",
+    "typecheck": "node -e \"console.log('typecheck scaffold: @sua-marca/billing')\"",
+    "test": "node -e \"console.log('test scaffold: @sua-marca/billing')\""
+  },
+  "dependencies": {}
+}

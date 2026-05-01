@@ -480,3 +480,9 @@ This plan is complete when:
 - non-React packages do not import React;
 - docs include usage examples;
 - build, lint, typecheck and tests pass.
+
+### Decision: Static-only validation in this environment
+
+Reason:
+
+pnpm bootstrap is proxy-blocked here; full runtime checks must run in local/CI.
