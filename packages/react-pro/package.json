@@ -1,0 +1,17 @@
+{
+  "name": "@sua-marca-pro/react",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "registry": "http://localhost:4873",
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "echo 'react-pro build placeholder'",
+    "lint": "echo 'react-pro lint placeholder'",
+    "test": "echo 'react-pro test placeholder'",
+    "typecheck": "echo 'react-pro typecheck placeholder'"
+  }
+}

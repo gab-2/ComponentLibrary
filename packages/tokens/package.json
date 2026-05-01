@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/tokens",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'tokens build placeholder'",
+    "lint": "echo 'tokens lint placeholder'",
+    "test": "echo 'tokens test placeholder'",
+    "typecheck": "echo 'tokens typecheck placeholder'"
+  }
+}

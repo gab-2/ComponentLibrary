@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/core",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'core build placeholder'",
+    "lint": "echo 'core lint placeholder'",
+    "test": "echo 'core test placeholder'",
+    "typecheck": "echo 'core typecheck placeholder'"
+  }
+}

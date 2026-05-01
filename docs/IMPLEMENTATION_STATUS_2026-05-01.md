@@ -1,50 +1,65 @@
 # Implementation Status Audit (2026-05-01)
 
-## Context
+## O que foi feito corretamente até agora
 
-This audit checks what is already implemented in the repository versus the requested implementation sequence and acceptance goals.
+### Fundação do monorepo (ExecPlan 001 - parcial)
+- Estrutura de diretórios criada para todos os apps obrigatórios:
+  - `apps/marketing`
+  - `apps/dashboard`
+  - `apps/docs`
+  - `apps/api`
+  - `apps/registry`
+  - `apps/storybook`
+- Estrutura de diretórios criada para todos os packages obrigatórios (shared, framework, pro, platform e config).
+- Configuração base criada para:
+  - `tsconfig.json`
+  - `eslint.config.mjs`
+  - `.prettierrc`
+  - `docker-compose.yml` com `postgres` e `registry` local.
+- Pacotes de configuração inicializados:
+  - `packages/config-typescript`
+  - `packages/config-eslint`
+  - `packages/config-tailwind`
+- Placeholders de `package.json` e `src/index.ts` adicionados em apps/packages para permitir execução de pipelines turbo.
+- Escopos público/privado respeitados por nome de pacote:
+  - público: `@sua-marca/*`
+  - privado: `@sua-marca-pro/*`
+- `publishConfig` inicial adicionado em pacotes Pro para registry privado local (`http://localhost:4873`).
 
-## What is already correctly done
+### Verificações executadas
+- `pnpm lint` executa em múltiplos workspaces com sucesso.
+- `pnpm typecheck` executa em múltiplos workspaces com sucesso.
+- `pnpm build` executa em múltiplos workspaces com sucesso (com warnings esperados por placeholders sem artefatos de build).
 
-### Repository baseline exists
-- Core guidance/specification files exist (`AGENTS.md`, `PRODUCT_SPEC.md`, `ARCHITECTURE.md`, `ACCEPTANCE_CRITERIA.md`, docs and design files).
-- Monorepo root tooling files exist: `package.json`, `pnpm-workspace.yaml`, `turbo.json`, `.env.example`.
+## O que ainda falta
 
-### Root script scaffolding exists
-- Root scripts for `dev`, `build`, `lint`, `test`, `typecheck`, db commands and release/changeset flows are declared.
-- `pnpm lint` runs without crashing at repository level.
+### ExecPlan 001 (ainda incompleto)
+- Substituir placeholders por apps reais (Next.js/API/registry/storybook).
+- Implementar build real gerando artefatos (`dist/.next/etc`) para eliminar warnings de outputs do Turbo.
+- Adicionar scripts/tooling reais em `tooling/scripts`.
+- Atualizar checklist `Progress` do plano `001` com itens concluídos e decisões no `Decision Log`.
 
-## What is missing or incomplete
+### ExecPlan 002
+- Implementar de fato os pacotes `tokens`, `styles`, `core`, `icons`, `react`, `react-pro` com componentes e exports reais.
 
-### ExecPlans status
-- All active ExecPlans (`001` to `007`) are still under `docs/exec-plans/active/`.
-- Progress checklists in these plans remain unchecked (no completed tasks marked).
-- No ExecPlan appears to have been moved to `docs/exec-plans/completed/`.
+### ExecPlan 003
+- Prisma schema, migrations, seeds (Free/Pro/Lifetime), auth, billing (Stripe), entitlement engine e rotas em `apps/api`.
 
-### Monorepo structure still missing
-The required workspace directories are not present yet:
-- `apps/marketing`, `apps/dashboard`, `apps/docs`, `apps/api`, `apps/registry`, `apps/storybook`
-- `packages/*` required by architecture (tokens/styles/core/framework/platform/config packages)
+### ExecPlan 004
+- Serviço de registry privado funcional, geração/listagem/revogação de tokens com hash e integração de autorização por entitlement.
 
-### Required product capabilities not implemented yet
-Because the app/package directories are not present, the following requirements are still pending:
-- Public and private package implementation and physical separation in actual package folders
-- Auth, billing, entitlements and Stripe workflows
-- Private registry service with revocable token flows
-- Multi-framework adapters (Vue/Angular/Svelte/Web Components)
-- CI/release/security workflow files and boundary checks
+### ExecPlan 005
+- Implementar páginas reais de marketing/dashboard/docs com gating por acesso.
 
-### Final validation criteria are not yet satisfiable
-- Commands like `pnpm build`, `pnpm typecheck`, `pnpm test` currently run zero package tasks instead of validating implemented apps/packages.
-- DB migration/seed and docker-compose acceptance path is not implemented yet.
+### ExecPlan 006
+- Implementar adapters reais para Vue/Angular/Svelte/Web Components sem reutilizar componentes React diretamente.
 
-## Recommended next execution order
-1. Execute `001-monorepo-foundation` fully and update its Progress + Decision Log.
-2. Build `002-design-system-packages` with real package directories and initial free/pro React split.
-3. Proceed with backend foundation (`003`) before registry (`004`) and apps (`005`).
-4. Add framework adapters (`006`) and CI/release/security hardening (`007`).
-5. After each plan: run verification commands listed in the plan and mark checklist items.
+### ExecPlan 007
+- CI/E2E/release workflows + scripts de segurança/boundary checks + configuração final de changesets.
 
-## Notes on constraints
-- No external-credentials blockers were identified yet, because implementation for Stripe/registry integration has not started in this repository state.
-- Once Stripe steps start, any missing credentials should be documented directly in the corresponding ExecPlan Decision Log and final status report.
+## Ordem recomendada para continuar
+1. Finalizar ExecPlan `001-monorepo-foundation` (substituir placeholders críticos e atualizar progresso).
+2. Implementar ExecPlan `002-design-system-packages`.
+3. Implementar ExecPlans `003` e `004` (backend + registry).
+4. Implementar ExecPlans `005` e `006` (apps + adapters).
+5. Finalizar ExecPlan `007` (CI/release/security).

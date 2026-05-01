@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/styles",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'styles build placeholder'",
+    "lint": "echo 'styles lint placeholder'",
+    "test": "echo 'styles test placeholder'",
+    "typecheck": "echo 'styles typecheck placeholder'"
+  }
+}

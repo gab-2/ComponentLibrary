@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/icons",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'icons build placeholder'",
+    "lint": "echo 'icons lint placeholder'",
+    "test": "echo 'icons test placeholder'",
+    "typecheck": "echo 'icons typecheck placeholder'"
+  }
+}

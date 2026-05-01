@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/react",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'react build placeholder'",
+    "lint": "echo 'react lint placeholder'",
+    "test": "echo 'react test placeholder'",
+    "typecheck": "echo 'react typecheck placeholder'"
+  }
+}

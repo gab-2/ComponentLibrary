@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/svelte",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'svelte build placeholder'",
+    "lint": "echo 'svelte lint placeholder'",
+    "test": "echo 'svelte test placeholder'",
+    "typecheck": "echo 'svelte typecheck placeholder'"
+  }
+}
