@@ -1,0 +1,19 @@
+{
+  "name": "@sua-marca/core",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "echo 'core lint pending rules'",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "@sua-marca/config-typescript": "workspace:*",
+    "vitest": "^2.1.8"
+  }
+}

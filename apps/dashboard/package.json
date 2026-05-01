@@ -1,0 +1,12 @@
+{
+  "name": "@sua-marca/dashboard",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'dashboard dev placeholder'",
+    "build": "echo 'dashboard build placeholder'",
+    "lint": "echo 'dashboard lint placeholder'",
+    "test": "echo 'dashboard test placeholder'",
+    "typecheck": "echo 'dashboard typecheck placeholder'"
+  }
+}

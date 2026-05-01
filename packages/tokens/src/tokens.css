@@ -1,0 +1,10 @@
+:root {
+  --sm-color-primary: #2563eb;
+  --sm-color-surface: #ffffff;
+  --sm-color-text: #0f172a;
+  --sm-radius-sm: 6px;
+  --sm-radius-md: 10px;
+  --sm-space-2: 0.5rem;
+  --sm-space-3: 0.75rem;
+  --sm-space-4: 1rem;
+}
