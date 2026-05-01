@@ -11,8 +11,8 @@
   ],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
-    "lint": "echo 'styles lint pending rules'",
-    "test": "echo 'styles test pending'",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

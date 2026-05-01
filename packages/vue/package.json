@@ -5,9 +5,9 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "build": "echo 'vue build placeholder'",
-    "lint": "echo 'vue lint placeholder'",
-    "test": "echo 'vue test placeholder'",
-    "typecheck": "echo 'vue typecheck placeholder'"
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   }
 }

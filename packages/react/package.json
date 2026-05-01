@@ -7,8 +7,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --external react",
-    "lint": "echo 'react lint pending rules'",
-    "test": "echo 'react test pending'",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

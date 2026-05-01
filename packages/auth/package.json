@@ -5,9 +5,9 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "build": "echo 'auth build placeholder'",
-    "lint": "echo 'auth lint placeholder'",
-    "test": "echo 'auth test placeholder'",
-    "typecheck": "echo 'auth typecheck placeholder'"
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   }
 }

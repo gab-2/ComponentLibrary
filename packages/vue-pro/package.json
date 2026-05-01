@@ -9,9 +9,9 @@
     "access": "restricted"
   },
   "scripts": {
-    "build": "echo 'vue-pro build placeholder'",
-    "lint": "echo 'vue-pro lint placeholder'",
-    "test": "echo 'vue-pro test placeholder'",
-    "typecheck": "echo 'vue-pro typecheck placeholder'"
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   }
 }

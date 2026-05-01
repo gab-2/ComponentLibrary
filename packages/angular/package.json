@@ -5,9 +5,9 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "build": "echo 'angular build placeholder'",
-    "lint": "echo 'angular lint placeholder'",
-    "test": "echo 'angular test placeholder'",
-    "typecheck": "echo 'angular typecheck placeholder'"
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   }
 }

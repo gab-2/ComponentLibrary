@@ -9,9 +9,9 @@
     "access": "restricted"
   },
   "scripts": {
-    "build": "echo 'angular-pro build placeholder'",
-    "lint": "echo 'angular-pro lint placeholder'",
-    "test": "echo 'angular-pro test placeholder'",
-    "typecheck": "echo 'angular-pro typecheck placeholder'"
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   }
 }

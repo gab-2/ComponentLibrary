@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'storybook dev placeholder'",
-    "build": "echo 'storybook build placeholder'",
-    "lint": "echo 'storybook lint placeholder'",
-    "test": "echo 'storybook test placeholder'",
-    "typecheck": "echo 'storybook typecheck placeholder'"
+    "dev": "tsx src/index.ts",
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   }
 }

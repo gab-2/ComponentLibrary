@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "echo 'Docs dev server running on http://localhost:3003 (process remains active by design)' && tsx src/server.ts",
     "build": "tsc --noEmit",
-    "lint": "echo 'docs lint placeholder'",
+    "lint": "prettier --check package.json",
     "test": "tsx --test src/server.test.ts",
     "typecheck": "tsc --noEmit"
   },

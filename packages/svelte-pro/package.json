@@ -9,9 +9,9 @@
     "access": "restricted"
   },
   "scripts": {
-    "build": "echo 'svelte-pro build placeholder'",
-    "lint": "echo 'svelte-pro lint placeholder'",
-    "test": "echo 'svelte-pro test placeholder'",
-    "typecheck": "echo 'svelte-pro typecheck placeholder'"
+    "build": "tsc --noEmit",
+    "lint": "prettier --check package.json",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   }
 }
