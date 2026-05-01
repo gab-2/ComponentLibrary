@@ -1,1 +1,1 @@
-export const packageName = "@sua-marca/entitlement";
+export * from "./can-access-pro";
