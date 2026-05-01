@@ -16,12 +16,5 @@
     "src/**/*.vue",
     "src/**/*.svelte",
     "README.md"
-  ],
-  "peerDependencies": {
-    "vue": ">=3"
-  },
-  "devDependencies": {
-    "typescript": "^5.7.2",
-    "@sua-marca/config-typescript": "workspace:*"
-  }
+  ]
 }

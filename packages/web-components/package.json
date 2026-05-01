@@ -16,9 +16,5 @@
     "src/**/*.vue",
     "src/**/*.svelte",
     "README.md"
-  ],
-  "devDependencies": {
-    "typescript": "^5.7.2",
-    "@sua-marca/config-typescript": "workspace:*"
-  }
+  ]
 }
