@@ -15,8 +15,8 @@
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
-    "lint": "echo 'registry-client lint placeholder'",
-    "test": "echo 'registry-client test placeholder'",
+    "lint": "prettier --check package.json",
+    "test": "node --test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

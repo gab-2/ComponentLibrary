@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx src/server.ts",
     "build": "tsc --noEmit",
-    "lint": "echo 'registry lint placeholder'",
+    "lint": "prettier --check package.json",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },

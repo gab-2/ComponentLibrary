@@ -12,8 +12,8 @@
   ],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
-    "lint": "echo 'tokens lint pending rules'",
-    "test": "echo 'tokens test pending'",
+    "lint": "prettier --check package.json",
+    "test": "node --test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
