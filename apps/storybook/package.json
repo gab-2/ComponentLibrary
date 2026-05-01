@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/storybook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "build": "echo build storybook",
+    "lint": "echo lint storybook",
+    "typecheck": "echo typecheck storybook",
+    "test": "echo test storybook"
+  }
+}

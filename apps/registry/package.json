@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/registry",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "build": "echo build registry",
+    "lint": "echo lint registry",
+    "typecheck": "echo typecheck registry",
+    "test": "echo test registry"
+  }
+}

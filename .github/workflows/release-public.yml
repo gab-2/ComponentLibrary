@@ -1,0 +1,15 @@
+name: Release Public
+on: { workflow_dispatch: {} }
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm build
+      - run: pnpm publish:public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_PUBLIC_TOKEN }}

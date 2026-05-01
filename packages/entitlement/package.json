@@ -1,0 +1,17 @@
+{
+  "name": "@sua-marca/entitlement",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo build entitlement",
+    "lint": "echo lint entitlement",
+    "typecheck": "echo typecheck entitlement",
+    "test": "echo test entitlement"
+  },
+  "dependencies": {
+    "@sua-marca/billing": "workspace:*"
+  }
+}

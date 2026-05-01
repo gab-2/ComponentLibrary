@@ -477,3 +477,16 @@ This plan is complete when:
 - subscription cancellation does not remove Lifetime access;
 - tests cover entitlement rules;
 - build, typecheck and tests pass.
+
+### Decision: Use durable lifetime license model
+
+Reason:
+
+Lifetime access must remain active regardless of subscription cancellation status.
+
+
+### Decision: Static-only validation in this environment
+
+Reason:
+
+Proxy blocks pnpm bootstrap, so runtime verification commands are deferred to local/CI.

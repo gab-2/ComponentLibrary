@@ -1,0 +1,14 @@
+{
+  "name": "@sua-marca/database",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "db:generate": "echo prisma generate",
+    "db:migrate": "echo prisma migrate",
+    "db:seed": "echo prisma seed",
+    "db:push": "echo prisma db push"
+  }
+}

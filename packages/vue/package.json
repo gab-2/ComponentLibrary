@@ -1,0 +1,14 @@
+{
+  "name": "@sua-marca/vue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo build vue",
+    "lint": "echo lint vue",
+    "typecheck": "echo typecheck vue",
+    "test": "echo test vue"
+  }
+}
