@@ -12,11 +12,12 @@ async function canAccessPro(email?: string) {
 }
 
 app.get("/health", async () => ({ status: "ok" }));
-
-app.get("/docs/public", async () => ({
-  title: "Public Docs",
-  frameworks: ["react", "vue", "angular", "svelte", "web-components"],
-}));
+app.get("/docs/public", async () => ({ title: "Public Docs", frameworks: ["react", "vue", "angular", "svelte", "web-components"] }));
+app.get("/docs/react", async () => ({ title: "React Docs" }));
+app.get("/docs/vue", async () => ({ title: "Vue Docs" }));
+app.get("/docs/angular", async () => ({ title: "Angular Docs" }));
+app.get("/docs/svelte", async () => ({ title: "Svelte Docs" }));
+app.get("/docs/web-components", async () => ({ title: "Web Components Docs" }));
 
 app.get("/docs/pro/react", async (request, reply) => {
   const query = request.query as { email?: string };
@@ -27,6 +28,8 @@ app.get("/docs/pro/react", async (request, reply) => {
   return {
     title: "React Pro Docs",
     package: "@sua-marca-pro/react",
+    install: "pnpm add @sua-marca-pro/react",
+    npmrc: "@sua-marca-pro:registry=https://registry.sua-marca.com\n//registry.sua-marca.com/:_authToken=YOUR_TOKEN",
     examples: ["DataTable", "DatePicker", "CommandMenu"],
   };
 });

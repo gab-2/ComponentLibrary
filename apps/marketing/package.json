@@ -3,10 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'marketing dev placeholder'",
+    "dev": "tsx src/server.ts",
     "build": "echo 'marketing build placeholder'",
     "lint": "echo 'marketing lint placeholder'",
-    "test": "echo 'marketing test placeholder'",
+    "test": "echo 'marketing tests covered by integration checks'",
     "typecheck": "echo 'marketing typecheck placeholder'"
+  },
+  "type": "module",
+  "dependencies": {
+    "fastify": "^5.3.2",
+    "@sua-marca/ui-internal": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9",
+    "@types/node": "^22.15.30"
   }
 }

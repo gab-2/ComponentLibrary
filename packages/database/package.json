@@ -7,7 +7,7 @@
   "scripts": {
     "build": "echo 'database build pending'",
     "lint": "echo 'database lint pending'",
-    "test": "echo 'database test pending'",
+    "test": "tsx --test tests/*.test.ts",
     "typecheck": "echo 'database typecheck pending'",
     "db:generate": "prisma generate",
     "db:migrate": "DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@localhost:5432/sua_ui_platform} prisma migrate dev --name init",
