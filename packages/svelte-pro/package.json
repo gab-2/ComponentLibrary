@@ -1,0 +1,17 @@
+{
+  "name": "@sua-marca-pro/svelte",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "registry": "http://localhost:4873",
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "echo 'svelte-pro build placeholder'",
+    "lint": "echo 'svelte-pro lint placeholder'",
+    "test": "echo 'svelte-pro test placeholder'",
+    "typecheck": "echo 'svelte-pro typecheck placeholder'"
+  }
+}

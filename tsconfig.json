@@ -1,0 +1,3 @@
+{
+  "extends": "@sua-marca/config-typescript/base.json"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@sua-marca/entitlement",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "echo 'entitlement lint pending rules'",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sua-marca/database": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.8"
+  }
+}

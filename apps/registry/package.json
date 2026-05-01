@@ -1,0 +1,12 @@
+{
+  "name": "@sua-marca/registry",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'registry dev placeholder'",
+    "build": "echo 'registry build placeholder'",
+    "lint": "echo 'registry lint placeholder'",
+    "test": "echo 'registry test placeholder'",
+    "typecheck": "echo 'registry typecheck placeholder'"
+  }
+}
