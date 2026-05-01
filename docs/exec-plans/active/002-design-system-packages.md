@@ -329,39 +329,39 @@ Run verification commands.
 
 ## Progress
 
-- [ ] Tokens package created
-- [ ] Token CSS variables created
-- [ ] Token JSON export created
-- [ ] Styles package created
-- [ ] Button styles created
-- [ ] Input styles created
-- [ ] Card styles created
+- [x] Tokens package created
+- [x] Token CSS variables created
+- [x] Token JSON export created
+- [x] Styles package created
+- [x] Button styles created
+- [x] Input styles created
+- [x] Card styles created
 - [ ] Badge styles created
 - [ ] Alert styles created
 - [ ] Modal styles created
 - [ ] DataTable styles created
-- [ ] Core package created
-- [ ] Button core helper created
-- [ ] Input core helper created
-- [ ] Card core helper created
+- [x] Core package created
+- [x] Button core helper created
+- [x] Input core helper created
+- [x] Card core helper created
 - [ ] DataTable helpers created
 - [ ] Icons package created
-- [ ] React free package created
-- [ ] React Button created
-- [ ] React Input created
-- [ ] React Card created
+- [x] React free package created
+- [x] React Button created
+- [x] React Input created
+- [x] React Card created
 - [ ] React Badge created
 - [ ] React Alert created
 - [ ] React Modal created
-- [ ] React Pro package created
-- [ ] React Pro DataTable created
+- [x] React Pro package created
+- [x] React Pro DataTable created
 - [ ] React Pro DatePicker or Calendar created
 - [ ] React Pro CommandMenu or MultiSelect created
-- [ ] Private package publishConfig added
+- [x] Private package publishConfig added
 - [ ] Core tests added
-- [ ] Build verified
-- [ ] Lint verified
-- [ ] Typecheck verified
+- [x] Build verified
+- [x] Lint verified
+- [x] Typecheck verified
 - [ ] Tests verified
 
 ## Decision Log
@@ -426,3 +426,8 @@ This plan is complete when:
 - Pro package has private `publishConfig`;
 - core helpers have basic tests;
 - build, lint, typecheck and tests pass.
+### Decision: Implement React first as the reference adapter
+
+Reason:
+
+Following the planned sequence, we implemented tokens → styles → core and then React/React-Pro adapters first, so future Vue/Angular/Svelte/Web Components can reuse the same shared layers without importing React directly.

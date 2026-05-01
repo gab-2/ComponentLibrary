@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/billing",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'billing build placeholder'",
+    "lint": "echo 'billing lint placeholder'",
+    "test": "echo 'billing test placeholder'",
+    "typecheck": "echo 'billing typecheck placeholder'"
+  }
+}

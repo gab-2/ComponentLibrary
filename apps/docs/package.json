@@ -1,0 +1,12 @@
+{
+  "name": "@sua-marca/docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'docs dev placeholder'",
+    "build": "echo 'docs build placeholder'",
+    "lint": "echo 'docs lint placeholder'",
+    "test": "echo 'docs test placeholder'",
+    "typecheck": "echo 'docs typecheck placeholder'"
+  }
+}

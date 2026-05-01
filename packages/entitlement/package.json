@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/entitlement",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'entitlement build placeholder'",
+    "lint": "echo 'entitlement lint placeholder'",
+    "test": "echo 'entitlement test placeholder'",
+    "typecheck": "echo 'entitlement typecheck placeholder'"
+  }
+}
