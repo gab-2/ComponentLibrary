@@ -28,7 +28,10 @@
     "publish:public": "pnpm build && changeset publish",
     "publish:private": "pnpm build && pnpm --filter \"@sua-marca-pro/*\" publish --no-git-checks",
     "storybook": "pnpm --filter storybook dev",
-    "test:e2e": "turbo test:e2e"
+    "test:e2e": "turbo test:e2e",
+    "services:doctor": "node tooling/scripts/services-doctor.mjs",
+    "setup:env": "node tooling/scripts/setup-env.mjs",
+    "services:up": "node tooling/scripts/services-up.mjs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
