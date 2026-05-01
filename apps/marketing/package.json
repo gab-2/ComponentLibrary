@@ -1,0 +1,12 @@
+{
+  "name": "@sua-marca/marketing",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'marketing dev placeholder'",
+    "build": "echo 'marketing build placeholder'",
+    "lint": "echo 'marketing lint placeholder'",
+    "test": "echo 'marketing test placeholder'",
+    "typecheck": "echo 'marketing typecheck placeholder'"
+  }
+}

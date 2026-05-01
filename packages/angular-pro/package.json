@@ -1,0 +1,17 @@
+{
+  "name": "@sua-marca-pro/angular",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "registry": "http://localhost:4873",
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "echo 'angular-pro build placeholder'",
+    "lint": "echo 'angular-pro lint placeholder'",
+    "test": "echo 'angular-pro test placeholder'",
+    "typecheck": "echo 'angular-pro typecheck placeholder'"
+  }
+}
