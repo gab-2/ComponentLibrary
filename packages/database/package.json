@@ -10,9 +10,9 @@
     "test": "echo 'database test pending'",
     "typecheck": "echo 'database typecheck pending'",
     "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev --name init",
-    "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:migrate": "DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@localhost:5432/sua_ui_platform} prisma migrate dev --name init",
+    "db:push": "DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@localhost:5432/sua_ui_platform} prisma db push",
+    "db:seed": "DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@localhost:5432/sua_ui_platform} tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.7.0"
