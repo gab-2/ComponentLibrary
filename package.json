@@ -31,13 +31,17 @@
     "test:e2e": "turbo test:e2e",
     "services:doctor": "node tooling/scripts/services-doctor.mjs",
     "setup:env": "node tooling/scripts/setup-env.mjs",
-    "services:up": "node tooling/scripts/services-up.mjs"
+    "services:up": "node tooling/scripts/services-up.mjs",
+    "check:boundaries": "tsx tooling/scripts/check-package-boundaries.ts",
+    "check:private-publish": "tsx tooling/scripts/check-private-publish-config.ts",
+    "check:secrets": "tsx tooling/scripts/check-secrets.ts"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
     "eslint": "^9.17.0",
     "prettier": "^3.4.2",
     "turbo": "^2.3.3",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2"
   }
 }

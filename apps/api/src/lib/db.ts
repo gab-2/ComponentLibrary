@@ -1,10 +1,16 @@
-import { PrismaClient } from "@prisma/client";
+import * as Prisma from "@prisma/client";
 
-const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
+const PrismaClientCtor = (Prisma as { PrismaClient?: new (options?: { log?: string[] }) => any }).PrismaClient;
+
+if (!PrismaClientCtor) {
+  throw new Error("PrismaClient is not available. Ensure prisma generate ran successfully.");
+}
+
+const globalForPrisma = globalThis as { prisma?: any };
 
 export const db =
   globalForPrisma.prisma ??
-  new PrismaClient({
+  new PrismaClientCtor({
     log: ["error"],
   });
 

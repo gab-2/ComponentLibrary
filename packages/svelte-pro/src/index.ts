@@ -1,1 +1,1 @@
-export const packageName = "@sua-marca-pro/svelte";
+export { default as DataTable } from "./components/DataTable.svelte";
