@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/vue",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'vue build placeholder'",
+    "lint": "echo 'vue lint placeholder'",
+    "test": "echo 'vue test placeholder'",
+    "typecheck": "echo 'vue typecheck placeholder'"
+  }
+}

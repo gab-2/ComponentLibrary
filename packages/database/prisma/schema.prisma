@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PlanCode {
+  FREE
+  PRO_MONTHLY
+  PRO_YEARLY
+  LIFETIME
+}
+
+enum EntitlementStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
+  licenses      License[]
+  entitlements  Entitlement[]
+  registryTokens RegistryToken[]
+}
+
+model Subscription {
+  id              String   @id @default(cuid())
+  userId          String
+  provider        String
+  providerRef     String   @unique
+  plan            PlanCode
+  status          String
+  currentPeriodEnd DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model License {
+  id         String   @id @default(cuid())
+  userId     String
+  plan       PlanCode
+  active     Boolean  @default(true)
+  grantedAt  DateTime @default(now())
+  revokedAt  DateTime?
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Entitlement {
+  id         String            @id @default(cuid())
+  userId     String
+  key        String
+  status     EntitlementStatus @default(ACTIVE)
+  createdAt  DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
+  user       User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, key])
+}
+
+model RegistryToken {
+  id          String   @id @default(cuid())
+  userId      String
+  tokenHash   String   @unique
+  tokenPrefix String
+  revokedAt   DateTime?
+  createdAt   DateTime @default(now())
+  lastUsedAt  DateTime?
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorUserId String?
+  action     String
+  resource   String
+  metadata   Json?
+  createdAt  DateTime @default(now())
+}
+
+model WebhookEvent {
+  id             String   @id @default(cuid())
+  provider       String
+  providerEventId String  @unique
+  payload        Json
+  processedAt    DateTime?
+  createdAt      DateTime @default(now())
+}

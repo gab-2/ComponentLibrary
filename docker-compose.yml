@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sua_ui_platform
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  registry:
+    image: verdaccio/verdaccio:5
+    ports:
+      - '4873:4873'
+    volumes:
+      - ./docker/verdaccio:/verdaccio/storage
+volumes:
+  postgres_data:

@@ -1,0 +1,30 @@
+{
+  "name": "@sua-marca-pro/react",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "http://localhost:4873",
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "lint": "echo 'react-pro lint pending rules'",
+    "test": "echo 'react-pro test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "dependencies": {
+    "@sua-marca/styles": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.2",
+    "@sua-marca/config-typescript": "workspace:*"
+  }
+}

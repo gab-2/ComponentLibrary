@@ -1,0 +1,23 @@
+{
+  "name": "@sua-marca/tokens",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/tokens.css",
+    "src/tokens.json"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "echo 'tokens lint pending rules'",
+    "test": "echo 'tokens test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "@sua-marca/config-typescript": "workspace:*"
+  }
+}

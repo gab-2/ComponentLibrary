@@ -1,0 +1,22 @@
+{
+  "name": "@sua-marca/icons",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "lint": "echo 'icons lint pending rules'",
+    "test": "echo 'icons test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  }
+}

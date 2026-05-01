@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/registry-client",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "echo 'registry-client build placeholder'",
+    "lint": "echo 'registry-client lint placeholder'",
+    "test": "echo 'registry-client test placeholder'",
+    "typecheck": "echo 'registry-client typecheck placeholder'"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@sua-marca/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "echo 'api build pending'",
+    "lint": "echo 'api lint pending rules'",
+    "test": "echo 'api test pending'",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sua-marca/entitlement": "workspace:*",
+    "fastify": "^5.3.2",
+    "@prisma/client": "^6.7.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3"
+  }
+}
