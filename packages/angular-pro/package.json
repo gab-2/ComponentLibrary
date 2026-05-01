@@ -3,15 +3,29 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "publishConfig": {
     "registry": "https://registry.sua-marca.com",
     "access": "restricted"
   },
   "scripts": {
-    "build": "tsc -v",
+    "build": "tsc -p tsconfig.build.json",
     "lint": "prettier --check package.json",
     "test": "node --test",
-    "typecheck": "tsc -v"
+    "typecheck": "tsc --noEmit"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/**/*.vue",
+    "src/**/*.svelte",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@angular/core": ">=17"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@sua-marca/config-typescript": "workspace:*"
   }
 }
