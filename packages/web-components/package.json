@@ -1,0 +1,14 @@
+{
+  "name": "@sua-marca/web-components",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo build web-components",
+    "lint": "echo lint web-components",
+    "typecheck": "echo typecheck web-components",
+    "test": "echo test web-components"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@sua-marca/react",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo build react",
+    "lint": "echo lint react",
+    "typecheck": "echo typecheck react",
+    "test": "echo test react"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@sua-marca/core": "workspace:*",
+    "@sua-marca/styles": "workspace:*",
+    "@sua-marca/tokens": "workspace:*"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

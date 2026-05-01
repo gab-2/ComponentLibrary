@@ -1,0 +1,17 @@
+{
+  "name": "@sua-marca-pro/vue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo build vue-pro",
+    "lint": "echo lint vue-pro",
+    "typecheck": "echo typecheck vue-pro",
+    "test": "echo test vue-pro"
+  },
+  "publishConfig": {
+    "registry": "https://registry.sua-marca.com"
+  }
+}

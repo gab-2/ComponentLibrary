@@ -426,3 +426,23 @@ This plan is complete when:
 - Pro package has private `publishConfig`;
 - core helpers have basic tests;
 - build, lint, typecheck and tests pass.
+
+### Decision: Keep Pro components physically isolated in react-pro package
+
+Reason:
+
+Enforces paid/public separation and prevents accidental leakage of paid source code into public packages.
+
+
+### Decision: Network/proxy blocked pnpm bootstrap
+
+Reason:
+
+`pnpm install` is currently blocked by proxy HTTP tunneling 403 while Corepack tries to download `https://registry.npmjs.org/pnpm/-/pnpm-9.15.0.tgz`.
+
+
+### Decision: Proxy blocking happens in both setup and agent phases
+
+Reason:
+
+Setup phase failed at `corepack prepare pnpm@9.15.0 --activate` and fallback `npm install -g pnpm@9.15.0`; agent phase commands using `pnpm` also failed before execution. `curl -I https://registry.npmjs.org/pnpm` returns `CONNECT tunnel failed, response 403`.

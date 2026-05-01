@@ -416,3 +416,9 @@ This plan is complete when:
 - `.npmrc` instructions are documented;
 - private packages have private `publishConfig`;
 - build, typecheck and tests pass.
+
+### Decision: Static-only validation in this environment
+
+Reason:
+
+pnpm bootstrap is proxy-blocked here; full runtime checks must run in local/CI.

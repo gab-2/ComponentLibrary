@@ -1,0 +1,13 @@
+storage: /verdaccio/storage
+auth:
+  htpasswd:
+    file: /verdaccio/conf/htpasswd
+packages:
+  '@sua-marca-pro/*':
+    access: $all
+    publish: $authenticated
+  '@sua-marca/*':
+    access: $all
+    publish: $authenticated
+logs:
+  - {type: stdout, format: pretty, level: http}

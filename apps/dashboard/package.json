@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "build": "echo build dashboard",
+    "lint": "echo lint dashboard",
+    "typecheck": "echo typecheck dashboard",
+    "test": "echo test dashboard"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@sua-marca/marketing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "build": "echo build marketing",
+    "lint": "echo lint marketing",
+    "typecheck": "echo typecheck marketing",
+    "test": "echo test marketing"
+  }
+}
