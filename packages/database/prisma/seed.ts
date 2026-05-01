@@ -1,8 +1,14 @@
-import { PrismaClient } from "@prisma/client";
+import * as Prisma from "@prisma/client";
+
+const PrismaClientCtor = (Prisma as { PrismaClient?: new () => any }).PrismaClient;
+
+if (!PrismaClientCtor) {
+  throw new Error("PrismaClient is not available. Ensure prisma generate ran successfully.");
+}
 
 const PRO_KEYS = ["pro.packages.access", "pro.docs.access", "registry.tokens.create", "templates.pro.access"];
 
-export async function runSeed(prisma: Pick<PrismaClient, "user" | "subscription" | "license" | "entitlement" | "package">) {
+export async function runSeed(prisma: { user: any; subscription: any; license: any; entitlement: any; package: any }) {
   const free = await prisma.user.upsert({
     where: { email: "free@example.com" },
     update: {},
@@ -58,7 +64,7 @@ export async function runSeed(prisma: Pick<PrismaClient, "user" | "subscription"
 }
 
 async function main() {
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClientCtor();
   try {
     const seeded = await runSeed(prisma);
     console.log("Seeded users:", seeded.users);
