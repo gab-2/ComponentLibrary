@@ -338,3 +338,12 @@ Before production launch:
 - test token revocation;
 - test failed payment behavior;
 - test Lifetime access behavior.
+## CI Security Automation (ExecPlan 007)
+
+The repository includes automated security checks:
+
+- `pnpm check:boundaries` validates package separation and anti-leak boundaries;
+- `pnpm check:private-publish` validates private package registry configuration;
+- `pnpm check:secrets` scans for common committed credential patterns.
+
+These checks are enforced in `.github/workflows/ci.yml` and both release workflows.

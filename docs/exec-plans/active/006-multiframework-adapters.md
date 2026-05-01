@@ -383,42 +383,42 @@ Run lint, typecheck, tests and build.
 
 ## Progress
 
-- [ ] Vue package created
-- [ ] Vue Button created
-- [ ] Vue Input created
-- [ ] Vue Card created
-- [ ] Vue Pro package created
-- [ ] Vue Pro DataTable created
-- [ ] Vue Pro private publishConfig added
-- [ ] Angular package created
-- [ ] Angular Button created
-- [ ] Angular Input created
-- [ ] Angular Card created
-- [ ] Angular Pro package created
-- [ ] Angular Pro DataTable created
-- [ ] Angular Pro private publishConfig added
-- [ ] Svelte package created
-- [ ] Svelte Button created
-- [ ] Svelte Input created
-- [ ] Svelte Card created
-- [ ] Svelte Pro package created
-- [ ] Svelte Pro DataTable created
-- [ ] Svelte Pro private publishConfig added
-- [ ] Web Components package created
-- [ ] `sm-button` created
-- [ ] `sm-input` created
-- [ ] `sm-card` created
-- [ ] `sm-badge` created
-- [ ] `sm-alert` created
-- [ ] `sm-spinner` created
-- [ ] `sm-avatar` created
-- [ ] `sm-modal` created
-- [ ] Docs examples updated
-- [ ] Verified no React imports in non-React packages
-- [ ] Build verified
-- [ ] Lint verified
-- [ ] Typecheck verified
-- [ ] Tests verified
+- [x] Vue package created
+- [x] Vue Button created
+- [x] Vue Input created
+- [x] Vue Card created
+- [x] Vue Pro package created
+- [x] Vue Pro DataTable created
+- [x] Vue Pro private publishConfig added
+- [x] Angular package created
+- [x] Angular Button created
+- [x] Angular Input created
+- [x] Angular Card created
+- [x] Angular Pro package created
+- [x] Angular Pro DataTable created
+- [x] Angular Pro private publishConfig added
+- [x] Svelte package created
+- [x] Svelte Button created
+- [x] Svelte Input created
+- [x] Svelte Card created
+- [x] Svelte Pro package created
+- [x] Svelte Pro DataTable created
+- [x] Svelte Pro private publishConfig added
+- [x] Web Components package created
+- [x] `sm-button` created
+- [x] `sm-input` created
+- [x] `sm-card` created
+- [x] `sm-badge` created
+- [x] `sm-alert` created
+- [x] `sm-spinner` created
+- [x] `sm-avatar` created
+- [x] `sm-modal` created
+- [x] Docs examples updated
+- [x] Verified no React imports in non-React packages
+- [x] Build verified
+- [x] Lint verified
+- [x] Typecheck verified
+- [x] Tests verified
 
 ## Decision Log
 
@@ -480,3 +480,8 @@ This plan is complete when:
 - non-React packages do not import React;
 - docs include usage examples;
 - build, lint, typecheck and tests pass.
+### Decision: Pro package publishConfig points to production registry URL
+
+Reason:
+
+To enforce private package distribution defaults and align with private registry requirements, Pro framework packages now publish to `https://registry.sua-marca.com` by default.

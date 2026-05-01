@@ -1,0 +1,28 @@
+name: Release Public
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  release-public:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm build
+      - run: pnpm check:boundaries && pnpm check:private-publish && pnpm check:secrets
+      - name: Publish public packages only
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLIC_TOKEN }}
+        run: pnpm -r --filter "@sua-marca/*" --filter "!@sua-marca-pro/*" publish --access public --no-git-checks

@@ -1,8 +1,15 @@
-import { EntitlementStatus, PackageTier, PackageVisibility, PlanCode, PrismaClient } from "@prisma/client";
-
 const PRO_KEYS = ["pro.packages.access", "pro.docs.access", "registry.tokens.create", "templates.pro.access"];
 
-export async function runSeed(prisma: Pick<PrismaClient, "user" | "subscription" | "license" | "entitlement" | "package">) {
+type SeedPrisma = {
+  user: { upsert: (args: any) => Promise<any> };
+  subscription: { upsert: (args: any) => Promise<any> };
+  license: { upsert: (args: any) => Promise<any> };
+  entitlement: { upsert: (args: any) => Promise<any> };
+  package: { upsert: (args: any) => Promise<any> };
+  $disconnect?: () => Promise<void>;
+};
+
+export async function runSeed(prisma: SeedPrisma) {
   const free = await prisma.user.upsert({
     where: { email: "free@example.com" },
     update: {},
@@ -23,31 +30,31 @@ export async function runSeed(prisma: Pick<PrismaClient, "user" | "subscription"
 
   await prisma.subscription.upsert({
     where: { providerRef: "seed_pro_subscription" },
-    update: { status: "active", plan: PlanCode.PRO_MONTHLY },
-    create: { userId: pro.id, provider: "stripe", providerRef: "seed_pro_subscription", status: "active", plan: PlanCode.PRO_MONTHLY },
+    update: { status: "active", plan: "PRO_MONTHLY" },
+    create: { userId: pro.id, provider: "stripe", providerRef: "seed_pro_subscription", status: "active", plan: "PRO_MONTHLY" },
   });
 
   await prisma.license.upsert({
     where: { id: "seed_lifetime_license" },
     update: { active: true },
-    create: { id: "seed_lifetime_license", userId: lifetime.id, plan: PlanCode.LIFETIME, active: true },
+    create: { id: "seed_lifetime_license", userId: lifetime.id, plan: "LIFETIME", active: true },
   });
 
   for (const userId of [pro.id, lifetime.id]) {
     for (const key of PRO_KEYS) {
       await prisma.entitlement.upsert({
         where: { userId_key: { userId, key } },
-        update: { status: EntitlementStatus.ACTIVE, source: "seed" },
-        create: { userId, key, status: EntitlementStatus.ACTIVE, source: "seed" },
+        update: { status: "ACTIVE", source: "seed" },
+        create: { userId, key, status: "ACTIVE", source: "seed" },
       });
     }
   }
 
   const packages = [
-    { name: "@sua-marca/react", scope: "@sua-marca", visibility: PackageVisibility.PUBLIC, framework: "react", tier: PackageTier.FREE },
-    { name: "@sua-marca/vue", scope: "@sua-marca", visibility: PackageVisibility.PUBLIC, framework: "vue", tier: PackageTier.FREE },
-    { name: "@sua-marca-pro/react", scope: "@sua-marca-pro", visibility: PackageVisibility.PRIVATE, framework: "react", tier: PackageTier.PRO },
-    { name: "@sua-marca-pro/vue", scope: "@sua-marca-pro", visibility: PackageVisibility.PRIVATE, framework: "vue", tier: PackageTier.PRO },
+    { name: "@sua-marca/react", scope: "@sua-marca", visibility: "PUBLIC", framework: "react", tier: "FREE" },
+    { name: "@sua-marca/vue", scope: "@sua-marca", visibility: "PUBLIC", framework: "vue", tier: "FREE" },
+    { name: "@sua-marca-pro/react", scope: "@sua-marca-pro", visibility: "PRIVATE", framework: "react", tier: "PRO" },
+    { name: "@sua-marca-pro/vue", scope: "@sua-marca-pro", visibility: "PRIVATE", framework: "vue", tier: "PRO" },
   ];
 
   for (const pkg of packages) {
@@ -58,9 +65,10 @@ export async function runSeed(prisma: Pick<PrismaClient, "user" | "subscription"
 }
 
 async function main() {
+  const { PrismaClient } = await import("@prisma/client");
   const prisma = new PrismaClient();
   try {
-    const seeded = await runSeed(prisma);
+    const seeded = await runSeed(prisma as SeedPrisma);
     console.log("Seeded users:", seeded.users);
     console.log("Seeded packages:", seeded.packages);
   } finally {

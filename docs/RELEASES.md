@@ -296,3 +296,30 @@ If a package release is broken:
 - notify users if the issue impacts installation or runtime behavior.
 
 For private packages, registry-level access may also be adjusted if needed.
+## CI Workflows (ExecPlan 007)
+
+Implemented workflows:
+
+- `.github/workflows/ci.yml`
+- `.github/workflows/e2e.yml`
+- `.github/workflows/release-public.yml`
+- `.github/workflows/release-private.yml`
+
+### CI safety gates
+
+CI now includes:
+
+- `pnpm check:boundaries`
+- `pnpm check:private-publish`
+- `pnpm check:secrets`
+
+### Public release safeguards
+
+`release-public.yml` publishes only `@sua-marca/*` and explicitly excludes `@sua-marca-pro/*`.
+
+### Private release safeguards
+
+`release-private.yml` publishes only `@sua-marca-pro/*` and requires:
+
+- `PRIVATE_REGISTRY_URL`
+- `PRIVATE_REGISTRY_TOKEN`
