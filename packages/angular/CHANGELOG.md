@@ -1,5 +1,25 @@
 # @sua-marca-ui/angular
 
+## 0.1.3
+
+### Patch Changes
+
+- bug fix
+- Updated dependencies
+  - @sua-marca-ui/core@0.0.4
+  - @sua-marca-ui/styles@0.0.4
+
+## 0.1.2
+
+### Patch Changes
+
+- 243fd73: Finalize Input/Card multi-framework migration across core, styles, tokens, adapters and storybook validation.
+- design teste
+- Updated dependencies [243fd73]
+- Updated dependencies
+  - @sua-marca-ui/core@0.0.3
+  - @sua-marca-ui/styles@0.0.3
+
 ## Unreleased
 
 ### Patch Changes
