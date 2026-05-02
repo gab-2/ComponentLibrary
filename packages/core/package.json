@@ -10,14 +10,13 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsc -p tsconfig.build.json",
     "lint": "prettier --check package.json",
     "test": "node ../../tooling/scripts/run-vitest-safe.mjs run",
     "typecheck": "tsc --noEmit",
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "tsup": "^8.5.0",
     "@sua-marca-ui/config-typescript": "workspace:*",
     "vitest": "^2.1.8"
   }
