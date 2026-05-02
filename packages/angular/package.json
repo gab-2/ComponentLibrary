@@ -13,8 +13,6 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src/**/*.vue",
-    "src/**/*.svelte",
     "README.md"
   ]
 }
