@@ -10,7 +10,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build": "tsc --noEmit",
     "lint": "prettier --check package.json",
     "test": "node --test",
     "typecheck": "tsc --noEmit"

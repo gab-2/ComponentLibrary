@@ -1,1 +1,21 @@
-.sm-card{background:var(--sm-color-surface);color:var(--sm-color-text);padding:var(--sm-space-4);border:1px solid #e2e8f0;border-radius:var(--sm-radius-md)}
+.sm-card {
+  background: var(--sm-color-card-bg);
+  color: var(--sm-color-card-text);
+  padding: var(--sm-space-4);
+  border: 1px solid var(--sm-color-card-border);
+  border-radius: var(--sm-radius-md);
+  box-shadow: var(--sm-shadow-card);
+  transition:
+    border-color var(--sm-motion-duration-base) var(--sm-motion-easing-standard),
+    box-shadow var(--sm-motion-duration-base) var(--sm-motion-easing-standard),
+    transform var(--sm-motion-duration-base) var(--sm-motion-easing-standard);
+}
+
+.sm-card--hover:hover {
+  border-color: var(--sm-color-card-border-hover);
+  box-shadow: var(--sm-shadow-card-hover);
+}
+
+.sm-card--interactive {
+  cursor: pointer;
+}

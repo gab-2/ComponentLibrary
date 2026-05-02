@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "build": "tsc --noEmit",
     "lint": "prettier --check package.json",
-    "test": "vitest run",
+    "test": "node ../../tooling/scripts/run-vitest-safe.mjs run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -18,5 +18,9 @@
     "tsup": "^8.5.0",
     "typescript": "^5.9.3",
     "vitest": "^2.1.8"
+  },
+  "module": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
   }
 }

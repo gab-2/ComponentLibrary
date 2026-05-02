@@ -267,6 +267,18 @@ Run seed:
 pnpm db:seed
 ```
 
+Create a changeset for package versioning:
+
+```bash
+pnpm changeset
+```
+
+Run the release workflow:
+
+```bash
+pnpm release
+```
+
 ## Environment Variables
 
 Copy the example file:

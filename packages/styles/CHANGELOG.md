@@ -1,5 +1,11 @@
 # @sua-marca-ui/styles
 
+## Unreleased
+
+### Patch Changes
+
+- finalize canonical Input/Card shared styles and state classes
+
 ## 0.0.2
 
 ### Patch Changes

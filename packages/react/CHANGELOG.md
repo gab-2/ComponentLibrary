@@ -1,5 +1,11 @@
 # @sua-marca-ui/react
 
+## Unreleased
+
+### Patch Changes
+
+- update Input/Card adapters to canonical API and core-driven states
+
 ## 0.2.2
 
 ### Patch Changes

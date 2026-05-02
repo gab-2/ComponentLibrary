@@ -3,16 +3,16 @@
   "version": "0.0.2",
   "private": false,
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "files": [
     "dist",
     "README.md"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "build": "tsc --noEmit",
     "lint": "prettier --check package.json",
-    "test": "vitest run",
+    "test": "node ../../tooling/scripts/run-vitest-safe.mjs run",
     "typecheck": "tsc --noEmit",
     "test:coverage": "vitest run --coverage"
   },
