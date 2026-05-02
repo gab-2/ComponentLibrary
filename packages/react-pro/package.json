@@ -10,7 +10,7 @@
     "access": "restricted"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "build": "tsup src/index.ts --format esm,cjs --external react",
     "lint": "prettier --check package.json",
     "test": "node --test",
     "typecheck": "tsc --noEmit"
