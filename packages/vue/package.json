@@ -14,5 +14,9 @@
   "files": [
     "dist",
     "README.md"
-  ]
+  ],
+  "dependencies": {
+    "@sua-marca-ui/core": "workspace:*",
+    "@sua-marca-ui/styles": "workspace:*"
+  }
 }

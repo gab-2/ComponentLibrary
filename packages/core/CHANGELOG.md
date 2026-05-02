@@ -1,5 +1,11 @@
 # @sua-marca-ui/core
 
+## Unreleased
+
+### Patch Changes
+
+- finalize Input/Card core class composition, aria-invalid and focus-origin tracker
+
 ## 0.0.2
 
 ### Patch Changes

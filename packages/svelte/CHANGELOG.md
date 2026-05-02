@@ -1,5 +1,11 @@
 # @sua-marca-ui/svelte
 
+## Unreleased
+
+### Patch Changes
+
+- update Input/Card adapters to canonical API and core-driven states
+
 ## 0.1.1
 
 ### Patch Changes
