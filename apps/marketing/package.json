@@ -6,7 +6,7 @@
     "dev": "tsx src/server.ts",
     "build": "tsc -v",
     "lint": "prettier --check package.json",
-    "test": "ROLLUP_SKIP_NODEJS_NATIVE=true vitest run --passWithNoTests",
+    "test": "node ../../tooling/scripts/run-vitest-safe.mjs run --passWithNoTests",
     "typecheck": "tsc -v"
   },
   "type": "module",
