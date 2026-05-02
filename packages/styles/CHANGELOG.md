@@ -1,5 +1,13 @@
 # @sua-marca-ui/styles
 
+## 0.0.6
+
+### Patch Changes
+
+- bug fix
+- Updated dependencies
+  - @sua-marca-ui/tokens@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes

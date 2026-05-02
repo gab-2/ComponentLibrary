@@ -1,5 +1,11 @@
 # @sua-marca-ui/tokens
 
+## 0.0.6
+
+### Patch Changes
+
+- bug fix
+
 ## 0.0.5
 
 ### Patch Changes

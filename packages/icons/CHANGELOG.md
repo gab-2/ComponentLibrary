@@ -1,5 +1,11 @@
 # @sua-marca-ui/icons
 
+## 0.0.4
+
+### Patch Changes
+
+- bug fix
+
 ## 0.0.3
 
 ### Patch Changes
