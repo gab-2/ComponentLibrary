@@ -1,5 +1,5 @@
 {
-  "name": "@sua-marca/web-components",
+  "name": "@sua-marca-ui/web-components",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -13,8 +13,6 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src/**/*.vue",
-    "src/**/*.svelte",
     "README.md"
   ]
 }

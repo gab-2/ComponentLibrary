@@ -129,9 +129,9 @@ Do not import React into:
 
 These packages should use:
 
-- `@sua-marca/tokens`;
-- `@sua-marca/styles`;
-- `@sua-marca/core`.
+- `@sua-marca-ui/tokens`;
+- `@sua-marca-ui/styles`;
+- `@sua-marca-ui/core`.
 
 Each framework package should be idiomatic.
 
@@ -140,10 +140,10 @@ Each framework package should be idiomatic.
 Create or complete:
 
 ```txt
-@sua-marca/vue
-@sua-marca/angular
-@sua-marca/svelte
-@sua-marca/web-components
+@sua-marca-ui/vue
+@sua-marca-ui/angular
+@sua-marca-ui/svelte
+@sua-marca-ui/web-components
 ```
 
 ## Required Private Packages
@@ -151,9 +151,9 @@ Create or complete:
 Create or complete:
 
 ```txt
-@sua-marca-pro/vue
-@sua-marca-pro/angular
-@sua-marca-pro/svelte
+@sua-marca-ui-pro/vue
+@sua-marca-ui-pro/angular
+@sua-marca-ui-pro/svelte
 ```
 
 Private packages must include private `publishConfig`.
@@ -163,7 +163,7 @@ Private packages must include private `publishConfig`.
 Vue Free package:
 
 ```txt
-@sua-marca/vue
+@sua-marca-ui/vue
 ```
 
 Components:
@@ -175,7 +175,7 @@ Components:
 Vue Pro package:
 
 ```txt
-@sua-marca-pro/vue
+@sua-marca-ui-pro/vue
 ```
 
 Components:
@@ -194,7 +194,7 @@ Vue components should use:
 Angular Free package:
 
 ```txt
-@sua-marca/angular
+@sua-marca-ui/angular
 ```
 
 Components:
@@ -206,7 +206,7 @@ Components:
 Angular Pro package:
 
 ```txt
-@sua-marca-pro/angular
+@sua-marca-ui-pro/angular
 ```
 
 Components:
@@ -225,7 +225,7 @@ Angular components should use:
 Svelte Free package:
 
 ```txt
-@sua-marca/svelte
+@sua-marca-ui/svelte
 ```
 
 Components:
@@ -237,7 +237,7 @@ Components:
 Svelte Pro package:
 
 ```txt
-@sua-marca-pro/svelte
+@sua-marca-ui-pro/svelte
 ```
 
 Components:
@@ -255,7 +255,7 @@ Svelte components should use:
 Web Components package:
 
 ```txt
-@sua-marca/web-components
+@sua-marca-ui/web-components
 ```
 
 Components:
@@ -484,4 +484,4 @@ This plan is complete when:
 
 Reason:
 
-To enforce private package distribution defaults and align with private registry requirements, Pro framework packages now publish to `https://registry.sua-marca.com` by default.
+To enforce private package distribution defaults and align with private registry requirements, Pro framework packages now publish to `https://registry.sua-marca-ui.com` by default.

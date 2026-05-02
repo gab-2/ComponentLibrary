@@ -87,7 +87,7 @@ Pro components should be:
 Package:
 
 ```txt
-@sua-marca/react
+@sua-marca-ui/react
 ```
 
 Directory:
@@ -119,7 +119,7 @@ Initial components:
 Package:
 
 ```txt
-@sua-marca-pro/react
+@sua-marca-ui-pro/react
 ```
 
 Directory:
@@ -150,7 +150,7 @@ Initial components:
 Package:
 
 ```txt
-@sua-marca/vue
+@sua-marca-ui/vue
 ```
 
 Directory:
@@ -172,7 +172,7 @@ The Vue package should be structured so more components can be added later.
 Package:
 
 ```txt
-@sua-marca-pro/vue
+@sua-marca-ui-pro/vue
 ```
 
 Directory:
@@ -192,7 +192,7 @@ The Vue Pro package should demonstrate the correct paid-package structure.
 Package:
 
 ```txt
-@sua-marca/angular
+@sua-marca-ui/angular
 ```
 
 Directory:
@@ -214,7 +214,7 @@ The Angular package should be structured as a proper Angular library.
 Package:
 
 ```txt
-@sua-marca-pro/angular
+@sua-marca-ui-pro/angular
 ```
 
 Directory:
@@ -234,7 +234,7 @@ The Angular Pro package should demonstrate the correct paid-package structure.
 Package:
 
 ```txt
-@sua-marca/svelte
+@sua-marca-ui/svelte
 ```
 
 Directory:
@@ -254,7 +254,7 @@ Initial required components:
 Package:
 
 ```txt
-@sua-marca-pro/svelte
+@sua-marca-ui-pro/svelte
 ```
 
 Directory:
@@ -272,7 +272,7 @@ Initial required Pro example:
 Package:
 
 ```txt
-@sua-marca/web-components
+@sua-marca-ui/web-components
 ```
 
 Directory:
@@ -299,7 +299,7 @@ Web Components should be used for broad interoperability, especially for simple 
 Example:
 
 ```tsx
-import { Button } from "@sua-marca/react";
+import { Button } from "@sua-marca-ui/react";
 
 export function Example() {
   return (
@@ -334,7 +334,7 @@ interface ButtonProps {
 Example:
 
 ```tsx
-import { DataTable } from "@sua-marca-pro/react";
+import { DataTable } from "@sua-marca-ui-pro/react";
 
 export function Example() {
   return (

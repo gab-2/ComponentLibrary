@@ -101,23 +101,23 @@ The registry should be built so Verdaccio or the registry implementation can be 
 Public scope:
 
 ```txt
-@sua-marca
+@sua-marca-ui
 ```
 
 Private scope:
 
 ```txt
-@sua-marca-pro
+@sua-marca-ui-pro
 ```
 
 Private packages:
 
 ```txt
-@sua-marca-pro/react
-@sua-marca-pro/vue
-@sua-marca-pro/angular
-@sua-marca-pro/svelte
-@sua-marca-pro/templates
+@sua-marca-ui-pro/react
+@sua-marca-ui-pro/vue
+@sua-marca-ui-pro/angular
+@sua-marca-ui-pro/svelte
+@sua-marca-ui-pro/templates
 ```
 
 ## Registry Token Rules
@@ -146,7 +146,7 @@ Input:
 ```json
 {
   "token": "smr_dev_example",
-  "packageName": "@sua-marca-pro/react",
+  "packageName": "@sua-marca-ui-pro/react",
   "action": "install"
 }
 ```
@@ -250,15 +250,15 @@ The registry service must:
 Local development:
 
 ```txt
-@sua-marca-pro:registry=http://localhost:4873
+@sua-marca-ui-pro:registry=http://localhost:4873
 //localhost:4873/:_authToken=USER_TOKEN
 ```
 
 Production:
 
 ```txt
-@sua-marca-pro:registry=https://registry.sua-marca.com
-//registry.sua-marca.com/:_authToken=USER_TOKEN
+@sua-marca-ui-pro:registry=https://registry.sua-marca-ui.com
+//registry.sua-marca-ui.com/:_authToken=USER_TOKEN
 ```
 
 ## Implementation Milestones
@@ -395,7 +395,7 @@ docker compose ps
 Manual verification:
 
 ```bash
-pnpm add @sua-marca-pro/react
+pnpm add @sua-marca-ui-pro/react
 ```
 
 using a valid Pro or Lifetime token.

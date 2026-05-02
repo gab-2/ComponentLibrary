@@ -1,10 +1,14 @@
 {
-  "name": "@sua-marca/icons",
+  "name": "@sua-marca-ui/icons",
   "version": "0.0.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "lint": "prettier --check package.json",

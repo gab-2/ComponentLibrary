@@ -32,7 +32,7 @@ Este documento organiza um passo a passo grande para concluir o projeto com vali
 1. Consolidar `tokens -> styles -> core` com exports consistentes.
 2. Garantir testes unitários de helpers core (button/input/card/alert/modal).
 3. Garantir separação física Free/Pro em `packages/react` e `packages/react-pro`.
-4. Validar que pacotes públicos não importam `@sua-marca-pro/*`.
+4. Validar que pacotes públicos não importam `@sua-marca-ui-pro/*`.
 
 ## Fase 3 — ExecPlan 003 (Auth/Billing/Entitlements)
 

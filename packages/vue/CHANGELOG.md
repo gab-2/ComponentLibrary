@@ -1,4 +1,4 @@
-# @sua-marca/vue
+# @sua-marca-ui/vue
 
 ## 0.1.0
 

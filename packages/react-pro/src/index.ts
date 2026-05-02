@@ -1,4 +1,4 @@
-import "@sua-marca/styles/src/index.css";
+import "@sua-marca-ui/styles/src/index.css";
 
 export * from "./components/DataTable/DataTable";
 export * from "./components/DatePicker/DatePicker";

@@ -1,10 +1,14 @@
 {
-  "name": "@sua-marca/react",
+  "name": "@sua-marca-ui/react",
   "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --external react",
     "lint": "prettier --check package.json",
@@ -15,13 +19,13 @@
     "react": ">=18"
   },
   "dependencies": {
-    "@sua-marca/core": "workspace:*",
-    "@sua-marca/styles": "workspace:*"
+    "@sua-marca-ui/core": "workspace:*",
+    "@sua-marca-ui/styles": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
     "tsup": "^8.5.0",
     "typescript": "^5.7.2",
-    "@sua-marca/config-typescript": "workspace:*"
+    "@sua-marca-ui/config-typescript": "workspace:*"
   }
 }
