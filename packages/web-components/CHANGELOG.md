@@ -1,5 +1,11 @@
 # @sua-marca-ui/web-components
 
+## 0.1.2
+
+### Patch Changes
+
+- design teste
+
 ## 0.1.1
 
 ### Patch Changes
