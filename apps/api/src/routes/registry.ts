@@ -24,6 +24,17 @@ async function loadUserAccessByEmail(email: string) {
   });
 }
 
+async function logAuthorizationAudit(data: { action: string; resource: string; metadata?: Record<string, unknown>; actorUserId?: string }) {
+  await db.auditLog.create({
+    data: {
+      actorUserId: data.actorUserId,
+      action: data.action,
+      resource: data.resource,
+      metadata: data.metadata ? JSON.stringify(data.metadata) : undefined,
+    },
+  });
+}
+
 export async function registerRegistryRoutes(app: FastifyInstance) {
   app.post("/registry/tokens", async (request, reply) => {
     const body = request.body as { email?: string; name?: string };
@@ -118,19 +129,47 @@ export async function registerRegistryRoutes(app: FastifyInstance) {
 
     const tokenHash = hashToken(body.token);
     const token = await db.registryToken.findUnique({ where: { tokenHash } });
-    if (!token) return { allowed: false, reason: "INVALID_TOKEN" };
-    if (token.revokedAt) return { allowed: false, reason: "REVOKED_TOKEN" };
+    if (!token) {
+      await logAuthorizationAudit({ action: "registry.token.authorization.denied", resource: `package:${packageName}`, metadata: { reason: "INVALID_TOKEN" } });
+      return { allowed: false, reason: "INVALID_TOKEN" };
+    }
+    if (token.revokedAt) {
+      await logAuthorizationAudit({
+        action: "registry.token.authorization.denied",
+        resource: `registryToken:${token.id}`,
+        actorUserId: token.userId,
+        metadata: { reason: "REVOKED_TOKEN" },
+      });
+      return { allowed: false, reason: "REVOKED_TOKEN" };
+    }
 
     const user = await db.user.findUnique({
       where: { id: token.userId },
       include: { entitlements: true, subscriptions: true, licenses: true },
     });
-    if (!user) return { allowed: false, reason: "INVALID_TOKEN" };
+    if (!user) {
+      await logAuthorizationAudit({ action: "registry.token.authorization.denied", resource: `registryToken:${token.id}`, metadata: { reason: "INVALID_TOKEN" } });
+      return { allowed: false, reason: "INVALID_TOKEN" };
+    }
 
     const access = computeAccess(user);
-    if (!access.canAccessPro) return { allowed: false, reason: "NO_ACTIVE_PLAN" };
+    if (!access.canAccessPro) {
+      await logAuthorizationAudit({
+        action: "registry.token.authorization.denied",
+        resource: `registryToken:${token.id}`,
+        actorUserId: user.id,
+        metadata: { reason: "NO_ACTIVE_PLAN" },
+      });
+      return { allowed: false, reason: "NO_ACTIVE_PLAN" };
+    }
 
     await db.registryToken.update({ where: { id: token.id }, data: { lastUsedAt: new Date() } });
+    await logAuthorizationAudit({
+      action: "registry.token.authorization.allowed",
+      resource: `registryToken:${token.id}`,
+      actorUserId: user.id,
+      metadata: { packageName, action: body.action ?? "install" },
+    });
     return { allowed: true, reason: "ok", userId: user.id };
   });
 }

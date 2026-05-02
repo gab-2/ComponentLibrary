@@ -1,0 +1,5 @@
+.sm-tabs,.sm-accordion,.sm-menu,.sm-pagination{display:flex;gap:var(--sm-space-2)}
+.sm-menu{list-style:none;padding:0;margin:0}
+.sm-table{width:100%;border-collapse:collapse;background:var(--sm-color-bg-surface)}
+.sm-table td,.sm-table th{border:1px solid var(--sm-color-border-default);padding:var(--sm-space-2)}
+.sm-toast{padding:var(--sm-space-3);border-radius:var(--sm-radius-md);background:var(--sm-color-bg-elevated);box-shadow:var(--sm-shadow-md)}
