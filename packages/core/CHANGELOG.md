@@ -1,5 +1,11 @@
 # @sua-marca-ui/core
 
+## 0.0.5
+
+### Patch Changes
+
+- bug fix
+
 ## 0.0.4
 
 ### Patch Changes
