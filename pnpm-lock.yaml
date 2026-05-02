@@ -178,9 +178,6 @@ importers:
       '@sua-marca-ui/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.1(tsx@4.21.0)(typescript@5.9.3)
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@22.19.17)
@@ -248,9 +245,6 @@ importers:
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.28
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.1(tsx@4.21.0)(typescript@5.9.3)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
