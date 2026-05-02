@@ -34,15 +34,15 @@ Private paid packages use:
 These packages should be published publicly:
 
 ```txt
-@sua-marca/tokens
-@sua-marca/styles
-@sua-marca/core
-@sua-marca/icons
-@sua-marca/react
-@sua-marca/vue
-@sua-marca/angular
-@sua-marca/svelte
-@sua-marca/web-components
+@sua-marca-ui/tokens
+@sua-marca-ui/styles
+@sua-marca-ui/core
+@sua-marca-ui/icons
+@sua-marca-ui/react
+@sua-marca-ui/vue
+@sua-marca-ui/angular
+@sua-marca-ui/svelte
+@sua-marca-ui/web-components
 ```
 
 ## Private Packages
@@ -50,11 +50,11 @@ These packages should be published publicly:
 These packages should be published only to the private registry:
 
 ```txt
-@sua-marca-pro/react
-@sua-marca-pro/vue
-@sua-marca-pro/angular
-@sua-marca-pro/svelte
-@sua-marca-pro/templates
+@sua-marca-ui-pro/react
+@sua-marca-ui-pro/vue
+@sua-marca-ui-pro/angular
+@sua-marca-ui-pro/svelte
+@sua-marca-ui-pro/templates
 ```
 
 ## Local Registry URL
@@ -94,25 +94,25 @@ Production:
 React Pro:
 
 ```bash
-pnpm add @sua-marca-pro/react
+pnpm add @sua-marca-ui-pro/react
 ```
 
 Vue Pro:
 
 ```bash
-pnpm add @sua-marca-pro/vue
+pnpm add @sua-marca-ui-pro/vue
 ```
 
 Angular Pro:
 
 ```bash
-pnpm add @sua-marca-pro/angular
+pnpm add @sua-marca-ui-pro/angular
 ```
 
 Svelte Pro:
 
 ```bash
-pnpm add @sua-marca-pro/svelte
+pnpm add @sua-marca-ui-pro/svelte
 ```
 
 ## Registry Token Rules
@@ -168,7 +168,7 @@ Input:
 ```json
 {
   "token": "smr_dev_example",
-  "packageName": "@sua-marca-pro/react",
+  "packageName": "@sua-marca-ui-pro/react",
   "action": "install"
 }
 ```
@@ -316,7 +316,7 @@ Example:
 
 ```json
 {
-  "name": "@sua-marca-pro/react",
+  "name": "@sua-marca-ui-pro/react",
   "publishConfig": {
     "registry": "https://registry.sua-marca.com"
   }

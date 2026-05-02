@@ -1,5 +1,5 @@
 {
-  "name": "@sua-marca/react",
+  "name": "@sua-marca-ui/react",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -15,13 +15,13 @@
     "react": ">=18"
   },
   "dependencies": {
-    "@sua-marca/core": "workspace:*",
-    "@sua-marca/styles": "workspace:*"
+    "@sua-marca-ui/core": "^0.1.0",
+    "@sua-marca-ui/styles": "^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
     "tsup": "^8.5.0",
     "typescript": "^5.7.2",
-    "@sua-marca/config-typescript": "workspace:*"
+    "@sua-marca-ui/config-typescript": "workspace:*"
   }
 }

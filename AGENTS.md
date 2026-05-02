@@ -28,8 +28,8 @@ Free and paid packages must be physically separated.
 
 Correct:
 
-- `@sua-marca/react`
-- `@sua-marca-pro/react`
+- `@sua-marca-ui/react`
+- `@sua-marca-ui-pro/react`
 
 Incorrect:
 
@@ -77,23 +77,23 @@ When a subscription expires, the platform should block:
 
 Public packages:
 
-- `@sua-marca/tokens`
-- `@sua-marca/styles`
-- `@sua-marca/core`
-- `@sua-marca/icons`
-- `@sua-marca/react`
-- `@sua-marca/vue`
-- `@sua-marca/angular`
-- `@sua-marca/svelte`
-- `@sua-marca/web-components`
+- `@sua-marca-ui/tokens`
+- `@sua-marca-ui/styles`
+- `@sua-marca-ui/core`
+- `@sua-marca-ui/icons`
+- `@sua-marca-ui/react`
+- `@sua-marca-ui/vue`
+- `@sua-marca-ui/angular`
+- `@sua-marca-ui/svelte`
+- `@sua-marca-ui/web-components`
 
 Private paid packages:
 
-- `@sua-marca-pro/react`
-- `@sua-marca-pro/vue`
-- `@sua-marca-pro/angular`
-- `@sua-marca-pro/svelte`
-- `@sua-marca-pro/templates`
+- `@sua-marca-ui-pro/react`
+- `@sua-marca-ui-pro/vue`
+- `@sua-marca-ui-pro/angular`
+- `@sua-marca-ui-pro/svelte`
+- `@sua-marca-ui-pro/templates`
 
 ## Multi-Framework Architecture Rule
 

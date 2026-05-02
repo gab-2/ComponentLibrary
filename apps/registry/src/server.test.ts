@@ -13,7 +13,7 @@ describe("registry server", () => {
     const response = await registryServer.inject({
       method: "POST",
       url: "/authorize",
-      payload: { packageName: "@sua-marca-pro/react" },
+      payload: { packageName: "@sua-marca-ui-pro/react" },
     });
 
     expect(response.statusCode).toBe(400);

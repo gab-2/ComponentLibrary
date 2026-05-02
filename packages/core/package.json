@@ -1,6 +1,6 @@
 {
-  "name": "@sua-marca/core",
-  "version": "0.0.0",
+  "name": "@sua-marca-ui/core",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "tsup": "^8.5.0",
-    "@sua-marca/config-typescript": "workspace:*",
+    "@sua-marca-ui/config-typescript": "workspace:*",
     "vitest": "^2.1.8"
   }
 }

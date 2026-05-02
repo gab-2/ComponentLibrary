@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import { authorizeRegistryAccess } from "@sua-marca/registry-client";
+import { authorizeRegistryAccess } from "@sua-marca-ui/registry-client";
 
 const app = Fastify({ logger: true });
 const apiBaseUrl = process.env.API_BASE_URL ?? "http://localhost:4000";

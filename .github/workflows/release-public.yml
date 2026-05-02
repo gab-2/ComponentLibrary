@@ -25,4 +25,4 @@ jobs:
       - name: Publish public packages only
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLIC_TOKEN }}
-        run: pnpm -r --filter "@sua-marca/*" --filter "!@sua-marca-pro/*" publish --access public --no-git-checks
+        run: pnpm -r --filter "@sua-marca-ui/*" --filter "!@sua-marca-ui-pro/*" publish --access public --no-git-checks

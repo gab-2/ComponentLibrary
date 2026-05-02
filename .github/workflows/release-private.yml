@@ -28,4 +28,4 @@ jobs:
           pnpm config set @sua-marca-pro:registry "${{ secrets.PRIVATE_REGISTRY_URL }}"
           pnpm config set "//${{ secrets.PRIVATE_REGISTRY_URL#https:// }}/:_authToken" "${{ secrets.PRIVATE_REGISTRY_TOKEN }}"
       - name: Publish private packages only
-        run: pnpm -r --filter "@sua-marca-pro/*" publish --no-git-checks
+        run: pnpm -r --filter "@sua-marca-ui-pro/*" publish --no-git-checks

@@ -113,11 +113,11 @@ Private scope:
 Private packages:
 
 ```txt
-@sua-marca-pro/react
-@sua-marca-pro/vue
-@sua-marca-pro/angular
-@sua-marca-pro/svelte
-@sua-marca-pro/templates
+@sua-marca-ui-pro/react
+@sua-marca-ui-pro/vue
+@sua-marca-ui-pro/angular
+@sua-marca-ui-pro/svelte
+@sua-marca-ui-pro/templates
 ```
 
 ## Registry Token Rules
@@ -146,7 +146,7 @@ Input:
 ```json
 {
   "token": "smr_dev_example",
-  "packageName": "@sua-marca-pro/react",
+  "packageName": "@sua-marca-ui-pro/react",
   "action": "install"
 }
 ```
@@ -395,7 +395,7 @@ docker compose ps
 Manual verification:
 
 ```bash
-pnpm add @sua-marca-pro/react
+pnpm add @sua-marca-ui-pro/react
 ```
 
 using a valid Pro or Lifetime token.

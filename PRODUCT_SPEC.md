@@ -201,11 +201,11 @@ Lifetime access must be treated as a permanent license.
 Example:
 
 ```bash
-pnpm add @sua-marca/react
+pnpm add @sua-marca-ui/react
 ```
 
 ```tsx
-import { Button } from "@sua-marca/react";
+import { Button } from "@sua-marca-ui/react";
 ```
 
 ## Pro Component Journey
@@ -225,11 +225,11 @@ Example:
 ```
 
 ```bash
-pnpm add @sua-marca-pro/react
+pnpm add @sua-marca-ui-pro/react
 ```
 
 ```tsx
-import { DataTable } from "@sua-marca-pro/react";
+import { DataTable } from "@sua-marca-ui-pro/react";
 ```
 
 ## Access Expiration Behavior

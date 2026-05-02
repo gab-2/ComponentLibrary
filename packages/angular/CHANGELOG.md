@@ -1,4 +1,4 @@
-# @sua-marca/angular
+# @sua-marca-ui/angular
 
 ## 0.1.0
 
