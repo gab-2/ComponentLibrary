@@ -1,1 +1,1 @@
-export const packageName = "@sua-marca/auth";
+export const packageName = "@sua-marca-ui/auth";

@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import { Button, Card, PricingCard } from "@sua-marca/ui-internal";
+import { Button, Card, PricingCard } from "@sua-marca-ui/ui-internal";
 
 const app = Fastify({ logger: true });
 

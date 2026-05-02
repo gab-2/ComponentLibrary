@@ -51,10 +51,10 @@ export async function runSeed(prisma: SeedPrisma) {
   }
 
   const packages = [
-    { name: "@sua-marca/react", scope: "@sua-marca", visibility: "PUBLIC", framework: "react", tier: "FREE" },
-    { name: "@sua-marca/vue", scope: "@sua-marca", visibility: "PUBLIC", framework: "vue", tier: "FREE" },
-    { name: "@sua-marca-pro/react", scope: "@sua-marca-pro", visibility: "PRIVATE", framework: "react", tier: "PRO" },
-    { name: "@sua-marca-pro/vue", scope: "@sua-marca-pro", visibility: "PRIVATE", framework: "vue", tier: "PRO" },
+    { name: "@sua-marca-ui/react", scope: "@sua-marca-ui", visibility: "PUBLIC", framework: "react", tier: "FREE" },
+    { name: "@sua-marca-ui/vue", scope: "@sua-marca-ui", visibility: "PUBLIC", framework: "vue", tier: "FREE" },
+    { name: "@sua-marca-ui-pro/react", scope: "@sua-marca-ui-pro", visibility: "PRIVATE", framework: "react", tier: "PRO" },
+    { name: "@sua-marca-ui-pro/vue", scope: "@sua-marca-ui-pro", visibility: "PRIVATE", framework: "vue", tier: "PRO" },
   ];
 
   for (const pkg of packages) {

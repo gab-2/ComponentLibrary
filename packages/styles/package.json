@@ -1,5 +1,5 @@
 {
-  "name": "@sua-marca/styles",
+  "name": "@sua-marca-ui/styles",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -16,10 +16,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@sua-marca/tokens": "workspace:*"
+    "@sua-marca-ui/tokens": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",
-    "@sua-marca/config-typescript": "workspace:*"
+    "@sua-marca-ui/config-typescript": "workspace:*"
   }
 }

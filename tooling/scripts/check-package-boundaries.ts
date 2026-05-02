@@ -13,12 +13,12 @@ for (const pkgDir of packageDirs) {
   if (!existsSync(manifestPath)) continue;
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
   const name: string = manifest.name ?? "";
-  const isPrivatePackage = name.startsWith("@sua-marca-pro/");
+  const isPrivatePackage = name.startsWith("@sua-marca-ui-pro/");
 
   const sourceText = collectFiles(join(pkgDir, "src"), [".ts", ".tsx", ".js", ".jsx", ".vue", ".svelte"]).join("\n");
 
-  if (!isPrivatePackage && sourceText.includes("@sua-marca-pro/")) {
-    errors.push(`${name} imports private scope @sua-marca-pro/*`);
+  if (!isPrivatePackage && sourceText.includes("@sua-marca-ui-pro/")) {
+    errors.push(`${name} imports private scope @sua-marca-ui-pro/*`);
   }
 
   if (!isPrivatePackage && existsSync(join(pkgDir, "src/components/pro"))) {

@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const packagesDir = join(root, "packages");
-const requiredRegistry = "https://registry.sua-marca.com";
+const requiredRegistry = "https://registry.sua-marca-ui.com";
 
 const errors: string[] = [];
 for (const dir of readdirSync(packagesDir)) {

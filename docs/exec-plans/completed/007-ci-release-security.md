@@ -150,7 +150,7 @@ NPM_PUBLIC_TOKEN
 It should not publish:
 
 ```txt
-@sua-marca-pro/*
+@sua-marca-ui-pro/*
 ```
 
 ## Required Private Release Workflow
@@ -179,7 +179,7 @@ PRIVATE_REGISTRY_TOKEN
 It should publish only:
 
 ```txt
-@sua-marca-pro/*
+@sua-marca-ui-pro/*
 ```
 
 ## Changesets
@@ -198,7 +198,7 @@ The config should support the monorepo package release process.
 
 Create a script to verify:
 
-- public packages do not import `@sua-marca-pro/*`;
+- public packages do not import `@sua-marca-ui-pro/*`;
 - public packages do not contain Pro component directories;
 - private packages have `publishConfig.registry`;
 - private packages are not configured for public npm;
@@ -223,7 +223,7 @@ It should inspect private package `package.json` files and ensure:
 ```json
 {
   "publishConfig": {
-    "registry": "https://registry.sua-marca.com"
+    "registry": "https://registry.sua-marca-ui.com"
   }
 }
 ```

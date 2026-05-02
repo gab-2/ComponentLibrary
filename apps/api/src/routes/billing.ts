@@ -5,7 +5,7 @@ import {
   isPlanCode,
   normalizeStripeSubscriptionStatus,
   verifyWebhookSignature,
-} from "@sua-marca/billing";
+} from "@sua-marca-ui/billing";
 import { db } from "../lib/db";
 import { deriveEntitlementUpdateFromStripeEvent } from "../lib/billing-webhook";
 import { buildEntitlementUpdates } from "../lib/entitlement-sync";

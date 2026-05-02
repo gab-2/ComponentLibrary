@@ -395,7 +395,7 @@ Example:
 ```json
 {
   "publishConfig": {
-    "registry": "https://registry.sua-marca.com"
+    "registry": "https://registry.sua-marca-ui.com"
   }
 }
 ```

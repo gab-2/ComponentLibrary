@@ -1,5 +1,5 @@
 {
-  "name": "@sua-marca/entitlement",
+  "name": "@sua-marca-ui/entitlement",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@sua-marca/database": "workspace:*"
+    "@sua-marca-ui/database": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

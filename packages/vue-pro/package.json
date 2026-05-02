@@ -1,11 +1,11 @@
 {
-  "name": "@sua-marca-pro/vue",
+  "name": "@sua-marca-ui-pro/vue",
   "version": "0.0.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
   "publishConfig": {
-    "registry": "https://registry.sua-marca.com",
+    "registry": "https://registry.sua-marca-ui.com",
     "access": "restricted"
   },
   "scripts": {
