@@ -10,7 +10,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs",
+    "build": "tsc --noEmit",
     "lint": "prettier --check package.json",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
