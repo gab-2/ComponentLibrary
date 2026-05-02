@@ -10,7 +10,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "node build.mjs",
+    "build": "tsc -p tsconfig.build.json && node copy-assets.mjs",
     "lint": "prettier --check package.json",
     "test": "node --test",
     "typecheck": "tsc --noEmit"
