@@ -1,4 +1,4 @@
-# @sua-marca/web-components
+# @sua-marca-ui/web-components
 
 ## 0.1.0
 

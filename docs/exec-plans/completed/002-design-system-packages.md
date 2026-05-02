@@ -126,21 +126,21 @@ The React package must not contain Pro source code.
 
 The React Pro package may depend on:
 
-- `@sua-marca/react`;
-- `@sua-marca/core`;
-- `@sua-marca/styles`;
-- `@sua-marca/tokens`.
+- `@sua-marca-ui/react`;
+- `@sua-marca-ui/core`;
+- `@sua-marca-ui/styles`;
+- `@sua-marca-ui/tokens`.
 
 Public package:
 
 ```txt
-@sua-marca/react
+@sua-marca-ui/react
 ```
 
 Private package:
 
 ```txt
-@sua-marca-pro/react
+@sua-marca-ui-pro/react
 ```
 
 ## Package Build Requirements
@@ -194,9 +194,9 @@ It should provide:
 Required outputs:
 
 ```txt
-@sua-marca/tokens
-@sua-marca/tokens/css
-@sua-marca/tokens/json
+@sua-marca-ui/tokens
+@sua-marca-ui/tokens/css
+@sua-marca-ui/tokens/json
 ```
 
 ### Milestone 2: Styles Package
@@ -277,7 +277,7 @@ Requirements:
 - use shared styles;
 - expose TypeScript props;
 - export components from `src/index.ts`;
-- do not import from `@sua-marca-pro/*`.
+- do not import from `@sua-marca-ui-pro/*`.
 
 ### Milestone 6: React Pro Package
 
@@ -412,21 +412,21 @@ pnpm build
 Optional package-level checks:
 
 ```bash
-pnpm --filter @sua-marca/core test
-pnpm --filter @sua-marca/react build
-pnpm --filter @sua-marca-pro/react build
+pnpm --filter @sua-marca-ui/core test
+pnpm --filter @sua-marca-ui/react build
+pnpm --filter @sua-marca-ui-pro/react build
 ```
 
 ## Acceptance Criteria
 
 This plan is complete when:
 
-- `@sua-marca/tokens` exists and builds;
-- `@sua-marca/styles` exists and builds;
-- `@sua-marca/core` exists and builds;
-- `@sua-marca/icons` exists and builds;
-- `@sua-marca/react` exists and builds;
-- `@sua-marca-pro/react` exists and builds;
+- `@sua-marca-ui/tokens` exists and builds;
+- `@sua-marca-ui/styles` exists and builds;
+- `@sua-marca-ui/core` exists and builds;
+- `@sua-marca-ui/icons` exists and builds;
+- `@sua-marca-ui/react` exists and builds;
+- `@sua-marca-ui-pro/react` exists and builds;
 - React free package exports Button, Input, Card, Badge, Alert and Modal;
 - React Pro package exports DataTable and at least two other Pro components;
 - React package does not import from Pro package;

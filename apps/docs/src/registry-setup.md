@@ -3,15 +3,15 @@
 ## Local development
 
 ```txt
-@sua-marca-pro:registry=http://localhost:4873
+@sua-marca-ui-pro:registry=http://localhost:4873
 //localhost:4873/:_authToken=USER_TOKEN
 ```
 
 ## Production
 
 ```txt
-@sua-marca-pro:registry=https://registry.sua-marca.com
-//registry.sua-marca.com/:_authToken=USER_TOKEN
+@sua-marca-ui-pro:registry=https://registry.sua-marca-ui.com
+//registry.sua-marca-ui.com/:_authToken=USER_TOKEN
 ```
 
 ## Token lifecycle

@@ -1,1 +1,1 @@
-export const storybookApp = "@sua-marca/storybook";
+export const storybookApp = "@sua-marca-ui/storybook";

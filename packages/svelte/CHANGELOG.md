@@ -1,4 +1,4 @@
-# @sua-marca/svelte
+# @sua-marca-ui/svelte
 
 ## 0.1.0
 

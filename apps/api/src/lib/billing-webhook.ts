@@ -1,4 +1,4 @@
-import { allowsProAccess, normalizeStripeSubscriptionStatus } from "@sua-marca/billing";
+import { allowsProAccess, normalizeStripeSubscriptionStatus } from "@sua-marca-ui/billing";
 
 export type StripeWebhookLikeEvent = {
   id: string;

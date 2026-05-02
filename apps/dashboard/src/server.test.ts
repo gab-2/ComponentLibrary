@@ -12,7 +12,7 @@ describe("dashboard server", () => {
     const response = await dashboardServer.inject({ method: "GET", url: "/dashboard/install-instructions?email=pro@example.com" });
     expect(response.statusCode).toBe(200);
     const body = response.json();
-    expect(body.local.npmrc).toContain("@sua-marca-pro:registry=http://localhost:4873");
+    expect(body.local.npmrc).toContain("@sua-marca-ui-pro:registry=http://localhost:4873");
     expect(body.access.canAccessPro).toBe(true);
   });
 
