@@ -64,9 +64,10 @@ describe("registry routes", () => {
     expect(response.statusCode).toBe(200);
     expect(response.json().allowed).toBe(true);
     expect(mockDb.registryToken.update).toHaveBeenCalledTimes(1);
+    expect(mockDb.auditLog.create).toHaveBeenCalled();
   });
 
-  it("denies revoked and invalid tokens", async () => {
+  it("denies revoked and invalid tokens and writes audit logs", async () => {
     const app = Fastify();
     await registerRegistryRoutes(app);
     mockDb.package.findUnique.mockResolvedValue({ name: "@sua-marca-ui-pro/react", visibility: "PRIVATE" });
@@ -77,5 +78,24 @@ describe("registry routes", () => {
 
     const revoked = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "revoked", packageName: "@sua-marca-ui-pro/react" } });
     expect(revoked.json()).toEqual({ allowed: false, reason: "REVOKED_TOKEN" });
+    expect(mockDb.auditLog.create).toHaveBeenCalledTimes(2);
+  });
+
+  it("denies token when plan is inactive and audits reason", async () => {
+    const app = Fastify();
+    await registerRegistryRoutes(app);
+    mockDb.package.findUnique.mockResolvedValue({ name: "@sua-marca-ui-pro/react", visibility: "PRIVATE" });
+    mockDb.registryToken.findUnique.mockResolvedValue({ id: "t-inactive", userId: "u-inactive", revokedAt: null });
+    mockDb.user.findUnique.mockResolvedValue({
+      id: "u-inactive",
+      entitlements: [{ key: "pro.packages.access", status: "INACTIVE" }],
+      subscriptions: [{ status: "canceled" }],
+      licenses: [],
+    });
+
+    const response = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "smr_dev_x", packageName: "@sua-marca-ui-pro/react" } });
+    expect(response.statusCode).toBe(200);
+    expect(response.json()).toEqual({ allowed: false, reason: "NO_ACTIVE_PLAN" });
+    expect(mockDb.auditLog.create).toHaveBeenCalledTimes(1);
   });
 });

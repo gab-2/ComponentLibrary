@@ -22,6 +22,16 @@ describe("computeAccess", () => {
     expect(access.canAccessPro).toBe(true);
   });
 
+  it.each(["canceled", "unpaid", "past_due", "expired"])("denies pro access for inactive subscription status: %s", (status) => {
+    const access = computeAccess({
+      entitlements: [{ key: "pro.packages.access", status: "INACTIVE" }],
+      subscriptions: [{ status }],
+      licenses: [],
+    });
+
+    expect(access.canAccessPro).toBe(false);
+  });
+
   it("denies access for free user", () => {
     const access = computeAccess({
       entitlements: [],

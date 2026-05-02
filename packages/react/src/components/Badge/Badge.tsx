@@ -1,3 +1,12 @@
 import * as React from "react";
 import { getBadgeClass } from "@sua-marca-ui/core";
-export function Badge({ children }: { children: React.ReactNode }) { return <span className={getBadgeClass()}>{children}</span>; }
+
+type BadgeProps = React.HTMLAttributes<HTMLSpanElement>;
+
+export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(function Badge({ className, children, ...props }, ref) {
+  return (
+    <span ref={ref} className={[getBadgeClass(), className].filter(Boolean).join(" ")} {...props}>
+      {children}
+    </span>
+  );
+});

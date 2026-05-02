@@ -1,3 +1,12 @@
 import * as React from "react";
 import { getAlertClass } from "@sua-marca-ui/core";
-export function Alert({ children }: { children: React.ReactNode }) { return <div className={getAlertClass()}>{children}</div>; }
+
+type AlertProps = React.HTMLAttributes<HTMLDivElement>;
+
+export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert({ className, children, ...props }, ref) {
+  return (
+    <div ref={ref} className={[getAlertClass(), className].filter(Boolean).join(" ")} {...props}>
+      {children}
+    </div>
+  );
+});
