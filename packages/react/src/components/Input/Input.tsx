@@ -1,6 +1,11 @@
 import * as React from "react";
-import { getInputClass } from "@sua-marca-ui/core";
+import { getInputClass, type InputSize } from "@sua-marca-ui/core";
 
-export function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return <input {...props} className={getInputClass()} />;
+type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> & {
+  size?: InputSize;
+  invalid?: boolean;
+};
+
+export function Input({ size = "md", invalid = false, className, ...props }: InputProps) {
+  return <input {...props} aria-invalid={invalid || undefined} className={[getInputClass({ size, invalid }), className].filter(Boolean).join(" ")} />;
 }
