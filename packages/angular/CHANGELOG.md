@@ -1,5 +1,11 @@
 # @sua-marca-ui/angular
 
+## 0.1.1
+
+### Patch Changes
+
+- bug fix
+
 ## 0.1.0
 
 ### Minor Changes
