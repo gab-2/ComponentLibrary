@@ -7,12 +7,10 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src/tokens.css",
-    "src/tokens.json",
     "README.md"
   ],
   "scripts": {
-    "build": "tsc --noEmit",
+    "build": "node build.mjs",
     "lint": "prettier --check package.json",
     "test": "node --test",
     "typecheck": "tsc --noEmit"
@@ -20,5 +18,13 @@
   "devDependencies": {
     "tsup": "^8.5.0",
     "@sua-marca-ui/config-typescript": "workspace:*"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.json": "./dist/tokens.json"
   }
 }
