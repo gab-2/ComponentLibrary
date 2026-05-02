@@ -217,20 +217,20 @@ Free users should see:
 For Pro or Lifetime users, show:
 
 ```txt
-@sua-marca-pro:registry=https://registry.sua-marca.com
-//registry.sua-marca.com/:_authToken=YOUR_TOKEN
+@sua-marca-ui-pro:registry=https://registry.sua-marca-ui.com
+//registry.sua-marca-ui.com/:_authToken=YOUR_TOKEN
 ```
 
 Then:
 
 ```bash
-pnpm add @sua-marca-pro/react
+pnpm add @sua-marca-ui-pro/react
 ```
 
 For local development examples, show:
 
 ```txt
-@sua-marca-pro:registry=http://localhost:4873
+@sua-marca-ui-pro:registry=http://localhost:4873
 //localhost:4873/:_authToken=YOUR_TOKEN
 ```
 

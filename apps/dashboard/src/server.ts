@@ -47,20 +47,20 @@ app.get("/dashboard/install-instructions", async (request) => {
 
   return {
     local: {
-      scope: "@sua-marca-pro",
+      scope: "@sua-marca-ui-pro",
       registry: "http://localhost:4873",
-      npmrc: "@sua-marca-pro:registry=http://localhost:4873\n//localhost:4873/:_authToken=USER_TOKEN",
+      npmrc: "@sua-marca-ui-pro:registry=http://localhost:4873\n//localhost:4873/:_authToken=USER_TOKEN",
     },
     production: {
-      scope: "@sua-marca-pro",
-      registry: "https://registry.sua-marca.com",
-      npmrc: "@sua-marca-pro:registry=https://registry.sua-marca.com\n//registry.sua-marca.com/:_authToken=USER_TOKEN",
+      scope: "@sua-marca-ui-pro",
+      registry: "https://registry.sua-marca-ui.com",
+      npmrc: "@sua-marca-ui-pro:registry=https://registry.sua-marca-ui.com\n//registry.sua-marca-ui.com/:_authToken=USER_TOKEN",
     },
     access: {
       canAccessPro,
       message: canAccessPro
-        ? "You can generate and use registry tokens for @sua-marca-pro packages."
-        : "Upgrade to Pro or Lifetime to use @sua-marca-pro packages.",
+        ? "You can generate and use registry tokens for @sua-marca-ui-pro packages."
+        : "Upgrade to Pro or Lifetime to use @sua-marca-ui-pro packages.",
     },
   };
 });

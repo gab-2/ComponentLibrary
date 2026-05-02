@@ -98,13 +98,13 @@ Framework adapters should use the shared layers.
 Package:
 
 ```txt
-@sua-marca/react
+@sua-marca-ui/react
 ```
 
 Private package:
 
 ```txt
-@sua-marca-pro/react
+@sua-marca-ui-pro/react
 ```
 
 React components should be written in TSX.
@@ -121,13 +121,13 @@ They should use:
 Package:
 
 ```txt
-@sua-marca/vue
+@sua-marca-ui/vue
 ```
 
 Private package:
 
 ```txt
-@sua-marca-pro/vue
+@sua-marca-ui-pro/vue
 ```
 
 Vue components should be written as Vue Single File Components where practical.
@@ -145,13 +145,13 @@ They should use:
 Package:
 
 ```txt
-@sua-marca/angular
+@sua-marca-ui/angular
 ```
 
 Private package:
 
 ```txt
-@sua-marca-pro/angular
+@sua-marca-ui-pro/angular
 ```
 
 Angular components should be structured as a proper Angular library.
@@ -169,13 +169,13 @@ They should use:
 Package:
 
 ```txt
-@sua-marca/svelte
+@sua-marca-ui/svelte
 ```
 
 Private package:
 
 ```txt
-@sua-marca-pro/svelte
+@sua-marca-ui-pro/svelte
 ```
 
 Svelte components should use:
@@ -191,7 +191,7 @@ Svelte components should use:
 Package:
 
 ```txt
-@sua-marca/web-components
+@sua-marca-ui/web-components
 ```
 
 Web Components should be used for broad interoperability.

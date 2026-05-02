@@ -21,7 +21,7 @@
   - `getButtonClass`, `getInputClass`, `getCardClass`.
 - `packages/react` agora contém componentes reais iniciais:
   - `Button`, `Input`, `Card`
-  - consumindo `@sua-marca/core` e `@sua-marca/styles`.
+  - consumindo `@sua-marca-ui/core` e `@sua-marca-ui/styles`.
 - `packages/react-pro` agora contém componente Pro inicial:
   - `DataTable`.
 - Pacotes acima agora têm `typecheck` e `build` reais com TypeScript + `tsup`.

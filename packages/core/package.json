@@ -1,10 +1,14 @@
 {
-  "name": "@sua-marca/core",
+  "name": "@sua-marca-ui/core",
   "version": "0.0.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "lint": "prettier --check package.json",
@@ -13,7 +17,7 @@
   },
   "devDependencies": {
     "tsup": "^8.5.0",
-    "@sua-marca/config-typescript": "workspace:*",
+    "@sua-marca-ui/config-typescript": "workspace:*",
     "vitest": "^2.1.8"
   }
 }

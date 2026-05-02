@@ -1,1 +1,1 @@
-export const apiApp = "@sua-marca/api";
+export const apiApp = "@sua-marca-ui/api";

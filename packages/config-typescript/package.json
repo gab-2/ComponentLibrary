@@ -1,5 +1,5 @@
 {
-  "name": "@sua-marca/config-typescript",
+  "name": "@sua-marca-ui/config-typescript",
   "version": "0.0.0",
   "private": true,
   "main": "base.json",

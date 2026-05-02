@@ -51,7 +51,7 @@ describe("registry routes", () => {
   it("allows lifetime token authorization", async () => {
     const app = Fastify();
     await registerRegistryRoutes(app);
-    mockDb.package.findUnique.mockResolvedValue({ name: "@sua-marca-pro/react", visibility: "PRIVATE" });
+    mockDb.package.findUnique.mockResolvedValue({ name: "@sua-marca-ui-pro/react", visibility: "PRIVATE" });
     mockDb.registryToken.findUnique.mockResolvedValue({ id: "t-life", userId: "u-life", revokedAt: null });
     mockDb.user.findUnique.mockResolvedValue({
       id: "u-life",
@@ -60,7 +60,7 @@ describe("registry routes", () => {
       licenses: [{ plan: "LIFETIME", active: true }],
     });
 
-    const response = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "smr_dev_life", packageName: "@sua-marca-pro/react" } });
+    const response = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "smr_dev_life", packageName: "@sua-marca-ui-pro/react" } });
     expect(response.statusCode).toBe(200);
     expect(response.json().allowed).toBe(true);
     expect(mockDb.registryToken.update).toHaveBeenCalledTimes(1);
@@ -69,13 +69,13 @@ describe("registry routes", () => {
   it("denies revoked and invalid tokens", async () => {
     const app = Fastify();
     await registerRegistryRoutes(app);
-    mockDb.package.findUnique.mockResolvedValue({ name: "@sua-marca-pro/react", visibility: "PRIVATE" });
+    mockDb.package.findUnique.mockResolvedValue({ name: "@sua-marca-ui-pro/react", visibility: "PRIVATE" });
     mockDb.registryToken.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce({ id: "t1", userId: "u1", revokedAt: new Date() });
 
-    const invalid = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "bad", packageName: "@sua-marca-pro/react" } });
+    const invalid = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "bad", packageName: "@sua-marca-ui-pro/react" } });
     expect(invalid.json()).toEqual({ allowed: false, reason: "INVALID_TOKEN" });
 
-    const revoked = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "revoked", packageName: "@sua-marca-pro/react" } });
+    const revoked = await app.inject({ method: "POST", url: "/registry/authorize", payload: { token: "revoked", packageName: "@sua-marca-ui-pro/react" } });
     expect(revoked.json()).toEqual({ allowed: false, reason: "REVOKED_TOKEN" });
   });
 });
