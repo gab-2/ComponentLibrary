@@ -135,8 +135,8 @@ import {
   getButtonClasses,
   type ButtonSize,
   type ButtonVariant,
-} from "@sua-marca/core";
-import "@sua-marca/styles/button.css";
+} from "@sua-marca-ui/core";
+import "@sua-marca-ui/styles/button.css";
 
 export interface ButtonProps {
   variant?: ButtonVariant;
@@ -307,7 +307,7 @@ The Pro package must have:
 
 ```json
 {
-  "name": "@sua-marca-pro/react",
+  "name": "@sua-marca-ui-pro/react",
   "publishConfig": {
     "registry": "https://registry.sua-marca.com"
   }

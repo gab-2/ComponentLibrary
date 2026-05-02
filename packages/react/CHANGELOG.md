@@ -1,4 +1,4 @@
-# @sua-marca/react
+# @sua-marca-ui/react
 
 ## 0.1.0
 

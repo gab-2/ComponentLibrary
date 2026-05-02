@@ -32,10 +32,10 @@ importers:
       '@prisma/client':
         specifier: ^6.7.0
         version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      '@sua-marca/billing':
+      '@sua-marca-ui/billing':
         specifier: workspace:*
         version: link:../../packages/billing
-      '@sua-marca/entitlement':
+      '@sua-marca-ui/entitlement':
         specifier: workspace:*
         version: link:../../packages/entitlement
       fastify:
@@ -95,7 +95,7 @@ importers:
 
   apps/marketing:
     dependencies:
-      '@sua-marca/ui-internal':
+      '@sua-marca-ui/ui-internal':
         specifier: workspace:*
         version: link:../../packages/ui-internal
       fastify:
@@ -117,7 +117,7 @@ importers:
 
   apps/registry:
     dependencies:
-      '@sua-marca/registry-client':
+      '@sua-marca-ui/registry-client':
         specifier: workspace:*
         version: link:../../packages/registry-client
       fastify:
@@ -168,7 +168,7 @@ importers:
 
   packages/core:
     devDependencies:
-      '@sua-marca/config-typescript':
+      '@sua-marca-ui/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
       tsup:
@@ -193,7 +193,7 @@ importers:
 
   packages/entitlement:
     dependencies:
-      '@sua-marca/database':
+      '@sua-marca-ui/database':
         specifier: workspace:*
         version: link:../database
     devDependencies:
@@ -225,17 +225,17 @@ importers:
 
   packages/react:
     dependencies:
-      '@sua-marca/core':
+      '@sua-marca-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@sua-marca/styles':
+      '@sua-marca-ui/styles':
         specifier: workspace:*
         version: link:../styles
       react:
         specifier: '>=18'
         version: 19.2.5
     devDependencies:
-      '@sua-marca/config-typescript':
+      '@sua-marca-ui/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
       '@types/react':
@@ -250,14 +250,14 @@ importers:
 
   packages/react-pro:
     dependencies:
-      '@sua-marca/styles':
+      '@sua-marca-ui/styles':
         specifier: workspace:*
         version: link:../styles
       react:
         specifier: '>=18'
         version: 19.2.5
     devDependencies:
-      '@sua-marca/config-typescript':
+      '@sua-marca-ui/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
       '@types/react':
@@ -281,11 +281,11 @@ importers:
 
   packages/styles:
     dependencies:
-      '@sua-marca/tokens':
+      '@sua-marca-ui/tokens':
         specifier: workspace:*
         version: link:../tokens
     devDependencies:
-      '@sua-marca/config-typescript':
+      '@sua-marca-ui/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
       tsup:
@@ -298,7 +298,7 @@ importers:
 
   packages/tokens:
     devDependencies:
-      '@sua-marca/config-typescript':
+      '@sua-marca-ui/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
       tsup:

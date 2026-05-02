@@ -30,15 +30,15 @@ These names can be changed before launch.
 Public packages use:
 
 ```txt
-@sua-marca/*
+@sua-marca-ui/*
 ```
 
 Examples:
 
 ```txt
-@sua-marca/react
-@sua-marca/vue
-@sua-marca/tokens
+@sua-marca-ui/react
+@sua-marca-ui/vue
+@sua-marca-ui/tokens
 ```
 
 ### Private packages
@@ -46,15 +46,15 @@ Examples:
 Private packages use:
 
 ```txt
-@sua-marca-pro/*
+@sua-marca-ui-pro/*
 ```
 
 Examples:
 
 ```txt
-@sua-marca-pro/react
-@sua-marca-pro/vue
-@sua-marca-pro/templates
+@sua-marca-ui-pro/react
+@sua-marca-ui-pro/vue
+@sua-marca-ui-pro/templates
 ```
 
 ### CSS variables

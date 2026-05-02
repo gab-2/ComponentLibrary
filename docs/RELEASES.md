@@ -17,15 +17,15 @@ The release process must prevent paid source code from being published publicly.
 Public packages:
 
 ```txt
-@sua-marca/tokens
-@sua-marca/styles
-@sua-marca/core
-@sua-marca/icons
-@sua-marca/react
-@sua-marca/vue
-@sua-marca/angular
-@sua-marca/svelte
-@sua-marca/web-components
+@sua-marca-ui/tokens
+@sua-marca-ui/styles
+@sua-marca-ui/core
+@sua-marca-ui/icons
+@sua-marca-ui/react
+@sua-marca-ui/vue
+@sua-marca-ui/angular
+@sua-marca-ui/svelte
+@sua-marca-ui/web-components
 ```
 
 These packages can be installed without private registry authentication.
@@ -35,11 +35,11 @@ These packages can be installed without private registry authentication.
 Private packages:
 
 ```txt
-@sua-marca-pro/react
-@sua-marca-pro/vue
-@sua-marca-pro/angular
-@sua-marca-pro/svelte
-@sua-marca-pro/templates
+@sua-marca-ui-pro/react
+@sua-marca-ui-pro/vue
+@sua-marca-ui-pro/angular
+@sua-marca-ui-pro/svelte
+@sua-marca-ui-pro/templates
 ```
 
 These packages must require private registry authentication.
@@ -112,7 +112,7 @@ Example:
 
 ```json
 {
-  "name": "@sua-marca-pro/react",
+  "name": "@sua-marca-ui-pro/react",
   "publishConfig": {
     "registry": "https://registry.sua-marca.com"
   }
@@ -136,7 +136,7 @@ The root `package.json` should include:
     "version-packages": "changeset version",
     "release": "pnpm build && changeset publish",
     "publish:public": "pnpm build && changeset publish",
-    "publish:private": "pnpm build && pnpm --filter \"@sua-marca-pro/*\" publish --no-git-checks"
+    "publish:private": "pnpm build && pnpm --filter \"@sua-marca-ui-pro/*\" publish --no-git-checks"
   }
 }
 ```
@@ -205,7 +205,7 @@ React and ReactDOM should not be bundled into the library.
 
 Before publishing private packages:
 
-- confirm package name starts with `@sua-marca-pro/`;
+- confirm package name starts with `@sua-marca-ui-pro/`;
 - confirm `publishConfig.registry` points to private registry;
 - confirm no public npm token is used;
 - confirm package is not marked for public npm publish;
@@ -216,8 +216,8 @@ Before publishing private packages:
 
 Before publishing public packages:
 
-- confirm package name starts with `@sua-marca/`;
-- confirm package does not import from `@sua-marca-pro/*`;
+- confirm package name starts with `@sua-marca-ui/`;
+- confirm package does not import from `@sua-marca-ui-pro/*`;
 - confirm package does not include Pro source code;
 - confirm package can be installed without private registry token.
 
@@ -315,11 +315,11 @@ CI now includes:
 
 ### Public release safeguards
 
-`release-public.yml` publishes only `@sua-marca/*` and explicitly excludes `@sua-marca-pro/*`.
+`release-public.yml` publishes only `@sua-marca-ui/*` and explicitly excludes `@sua-marca-ui-pro/*`.
 
 ### Private release safeguards
 
-`release-private.yml` publishes only `@sua-marca-pro/*` and requires:
+`release-private.yml` publishes only `@sua-marca-ui-pro/*` and requires:
 
 - `PRIVATE_REGISTRY_URL`
 - `PRIVATE_REGISTRY_TOKEN`

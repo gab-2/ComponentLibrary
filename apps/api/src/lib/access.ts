@@ -1,4 +1,4 @@
-import { canAccessPro } from "@sua-marca/entitlement";
+import { canAccessPro } from "@sua-marca-ui/entitlement";
 
 export type AccessSnapshot = {
   entitlements: Array<{ key: string; status: string }>;

@@ -224,7 +224,7 @@ For Pro or Lifetime users, show:
 Then:
 
 ```bash
-pnpm add @sua-marca-pro/react
+pnpm add @sua-marca-ui-pro/react
 ```
 
 For local development examples, show:

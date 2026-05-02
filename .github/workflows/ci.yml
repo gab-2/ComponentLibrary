@@ -18,7 +18,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @sua-marca/database db:generate
+      - run: pnpm --filter @sua-marca-ui/database db:generate
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test

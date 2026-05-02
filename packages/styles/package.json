@@ -1,6 +1,6 @@
 {
-  "name": "@sua-marca/styles",
-  "version": "0.0.0",
+  "name": "@sua-marca-ui/styles",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
@@ -16,10 +16,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@sua-marca/tokens": "workspace:*"
+    "@sua-marca-ui/tokens": "^0.1.0"
   },
   "devDependencies": {
     "tsup": "^8.5.0",
-    "@sua-marca/config-typescript": "workspace:*"
+    "@sua-marca-ui/config-typescript": "workspace:*"
   }
 }

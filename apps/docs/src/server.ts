@@ -28,8 +28,8 @@ app.get("/docs/pro/react", async (request, reply) => {
 
   return {
     title: "React Pro Docs",
-    package: "@sua-marca-pro/react",
-    install: "pnpm add @sua-marca-pro/react",
+    package: "@sua-marca-ui-pro/react",
+    install: "pnpm add @sua-marca-ui-pro/react",
     npmrc: "@sua-marca-pro:registry=https://registry.sua-marca.com\n//registry.sua-marca.com/:_authToken=YOUR_TOKEN",
     examples: ["DataTable", "DatePicker", "CommandMenu"],
   };
