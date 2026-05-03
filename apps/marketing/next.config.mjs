@@ -1,3 +1,6 @@
+const dashboardOrigin = process.env.DASHBOARD_ORIGIN ?? 'http://localhost:3002';
+const docsOrigin = process.env.DOCS_ORIGIN ?? 'http://localhost:3003';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -11,6 +14,26 @@ const nextConfig = {
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' }
         ]
+      }
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/docs',
+        destination: `${docsOrigin}/docs`
+      },
+      {
+        source: '/docs/:path*',
+        destination: `${docsOrigin}/docs/:path*`
+      },
+      {
+        source: '/dashboard',
+        destination: `${dashboardOrigin}/dashboard`
+      },
+      {
+        source: '/dashboard/:path*',
+        destination: `${dashboardOrigin}/dashboard/:path*`
       }
     ];
   }
