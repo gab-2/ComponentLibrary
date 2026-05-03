@@ -10,7 +10,7 @@
     "pnpm": ">=9.0.0"
   },
   "scripts": {
-    "dev": "pnpm -r --parallel --if-present run dev",
+    "dev": "pnpm dev:unified",
     "build": "pnpm -r --if-present run build",
     "lint": "pnpm -r --if-present run lint",
     "test": "pnpm build && pnpm -r --if-present run test",
@@ -37,7 +37,9 @@
     "check:secrets": "tsx tooling/scripts/check-secrets.ts",
     "check:bundle-budget": "tsx tooling/scripts/check-bundle-budget.ts",
     "test:phase6": "pnpm --filter @sua-marca-ui/core test && pnpm --filter @sua-marca-ui/react test && pnpm --filter @sua-marca-ui/react build",
-    "ci:quality": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm test:phase6 && pnpm check:bundle-budget && pnpm check:boundaries && pnpm check:private-publish && pnpm check:secrets"
+    "ci:quality": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm test:phase6 && pnpm check:bundle-budget && pnpm check:boundaries && pnpm check:private-publish && pnpm check:secrets",
+    "dev:unified": "pnpm --parallel --filter @sua-marca-ui/marketing --filter @sua-marca-ui/docs --filter @sua-marca-ui/dashboard run dev",
+    "dev:full": "pnpm -r --parallel --if-present run dev"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
