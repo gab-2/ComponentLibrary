@@ -1,5 +1,14 @@
 # @sua-marca-ui/svelte
 
+## 0.1.6
+
+### Patch Changes
+
+- bug fix
+- Updated dependencies
+  - @sua-marca-ui/core@0.0.7
+  - @sua-marca-ui/styles@0.0.7
+
 ## 0.1.5
 
 ### Patch Changes
