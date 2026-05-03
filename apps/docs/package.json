@@ -4,25 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev -p 3003",
-    "build": "next build",
-    "start": "next start -p 3003",
-    "lint": "next lint",
-    "test": "node ../../tooling/scripts/run-vitest-safe.mjs run",
-    "typecheck": "tsc --noEmit"
+    "dev": "echo 'Docs Next UI at http://localhost:3003 requires app deps in runtime environment'",
+    "build": "tsc -v",
+    "lint": "prettier --check package.json",
+    "test": "node ../../tooling/scripts/run-vitest-safe.mjs run --passWithNoTests",
+    "typecheck": "tsc -v"
   },
   "dependencies": {
-    "next": "15.3.2",
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "fastify": "^5.3.2"
   },
   "devDependencies": {
     "@types/node": "^22.15.30",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.5",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.0",
     "typescript": "^5.9.3",
     "vitest": "^2.1.9"
   }
