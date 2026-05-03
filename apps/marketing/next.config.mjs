@@ -1,5 +1,5 @@
-const dashboardOrigin = process.env.DASHBOARD_ORIGIN ?? 'http://localhost:3002';
-const docsOrigin = process.env.DOCS_ORIGIN ?? 'http://localhost:3003';
+const dashboardOrigin = process.env.DASHBOARD_ORIGIN ?? 'http://localhost:3102';
+const docsOrigin = process.env.DOCS_ORIGIN ?? 'http://localhost:3103';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
