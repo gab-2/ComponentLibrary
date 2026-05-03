@@ -71,3 +71,17 @@ pnpm dev
 ```
 
 Or run specific apps with workspace filters.
+
+
+## 7) UI apps after migration
+
+- Marketing UI: `http://localhost:3001`
+- Dashboard UI: `http://localhost:3002`
+- Docs UI: `http://localhost:3003`
+- API: `http://localhost:4000`
+- Registry: `http://localhost:4873`
+
+### Troubleshooting
+
+- If `pnpm lint` fails with missing Turbo binary, reinstall dependencies in an environment that allows optional binaries.
+- If Vitest fails with missing `@rollup/rollup-linux-x64-gnu`, reinstall dependencies without stripping optional packages.

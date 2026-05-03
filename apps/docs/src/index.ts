@@ -1,1 +1,1 @@
-export { docsServer } from "./server";
+export const docsApp = '@sua-marca-ui/docs-next';

@@ -1,14 +1,15 @@
-import test from "node:test";
-import assert from "node:assert/strict";
-import { marketingServer } from "./server";
+import { describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
-test("landing page", async () => {
-  const res = await marketingServer.inject({ method: "GET", url: "/" });
-  assert.equal(res.statusCode, 200);
-});
+describe('marketing next migration', () => {
+  it('contains main pages', () => {
+    const home = readFileSync(resolve(process.cwd(), 'app/page.tsx'), 'utf8');
+    const pricing = readFileSync(resolve(process.cwd(), 'app/pricing/page.tsx'), 'utf8');
+    const components = readFileSync(resolve(process.cwd(), 'app/components/page.tsx'), 'utf8');
 
-test("pricing has lifetime", async () => {
-  const res = await marketingServer.inject({ method: "GET", url: "/pricing" });
-  const body = res.json() as { plans: Array<{ plan: string }> };
-  assert.equal(body.plans.some((p) => p.plan === "LIFETIME"), true);
+    expect(home).toContain('Build faster with multi-framework UI components');
+    expect(pricing).toContain('PRO_MONTHLY');
+    expect(components).toContain('Free Components');
+  });
 });

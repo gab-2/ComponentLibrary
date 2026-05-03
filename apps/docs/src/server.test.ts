@@ -1,15 +1,13 @@
-import test from "node:test";
-import assert from "node:assert/strict";
-import { docsServer } from "./server";
+import { describe, expect, it, vi } from 'vitest';
+import { canAccessPro } from '../lib/pro-access';
 
-(globalThis as any).fetch = async () => ({ ok: true, json: async () => ({ access: { canAccessPro: false } }) });
+describe('docs migration', () => {
+  it('denies when no email', async () => {
+    expect(await canAccessPro(undefined)).toBe(false);
+  });
 
-test("serves public docs", async () => {
-  const response = await docsServer.inject({ method: "GET", url: "/docs/public" });
-  assert.equal(response.statusCode, 200);
-});
-
-test("gates pro docs", async () => {
-  const response = await docsServer.inject({ method: "GET", url: "/docs/pro/react?email=free@example.com" });
-  assert.equal(response.statusCode, 403);
+  it('handles API success', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => ({ access: { canAccessPro: true } }) })));
+    expect(await canAccessPro('pro@test.com')).toBe(true);
+  });
 });
