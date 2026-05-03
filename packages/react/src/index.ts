@@ -1,4 +1,4 @@
-import "@sua-marca-ui/styles/dist/index.css";
+import "@sua-marca-ui/styles/index.css";
 
 export * from "./components/Button/Button";
 export * from "./components/Input/Input";
