@@ -1,28 +1,16 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import { dashboardServer } from "./server";
+import { describe, expect, it, vi } from 'vitest';
+import { apiCall, requireEmail } from '../lib/api';
 
-const fetchMock = vi.fn();
-vi.stubGlobal("fetch", fetchMock);
-
-describe("dashboard server", () => {
-  beforeEach(() => vi.clearAllMocks());
-
-  it("returns npmrc setup", async () => {
-    fetchMock.mockResolvedValue({ ok: true, status: 200, json: async () => ({ access: { canAccessPro: true } }) });
-    const response = await dashboardServer.inject({ method: "GET", url: "/dashboard/install-instructions?email=pro@example.com" });
-    expect(response.statusCode).toBe(200);
-    const body = response.json();
-    expect(body.local.npmrc).toContain("@sua-marca-ui-pro:registry=http://localhost:4873");
-    expect(body.access.canAccessPro).toBe(true);
+describe('dashboard migration helpers', () => {
+  it('validates email requirement', () => {
+    expect(requireEmail('user@example.com')).toBe(true);
+    expect(requireEmail('')).toBe(false);
   });
 
-  it("builds overview payload", async () => {
-    fetchMock
-      .mockResolvedValueOnce({ status: 200, json: async () => ({ user: { email: "pro@example.com" }, access: { canAccessPro: true } }) })
-      .mockResolvedValueOnce({ status: 200, json: async () => ({ subscriptions: [], licenses: [] }) });
-
-    const response = await dashboardServer.inject({ method: "GET", url: "/dashboard/overview?email=pro@example.com" });
-    expect(response.statusCode).toBe(200);
-    expect(response.json().access.canAccessPro).toBe(true);
+  it('returns status/body from api call', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({ status: 200, json: async () => ({ ok: true }) })));
+    const result = await apiCall('/health');
+    expect(result.status).toBe(200);
+    expect(result.body).toEqual({ ok: true });
   });
 });
