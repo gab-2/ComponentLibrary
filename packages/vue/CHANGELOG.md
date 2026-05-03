@@ -1,5 +1,14 @@
 # @sua-marca-ui/vue
 
+## 0.1.7
+
+### Patch Changes
+
+- bug fix
+- Updated dependencies
+  - @sua-marca-ui/core@0.0.8
+  - @sua-marca-ui/styles@0.0.8
+
 ## 0.1.6
 
 ### Patch Changes

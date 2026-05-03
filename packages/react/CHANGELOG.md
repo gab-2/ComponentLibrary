@@ -1,5 +1,14 @@
 # @sua-marca-ui/react
 
+## 0.2.8
+
+### Patch Changes
+
+- bug fix
+- Updated dependencies
+  - @sua-marca-ui/core@0.0.8
+  - @sua-marca-ui/styles@0.0.8
+
 ## 0.2.7
 
 ### Patch Changes
