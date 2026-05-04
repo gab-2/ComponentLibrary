@@ -213,6 +213,24 @@ export default function FreeComponentsPage() {
           ))}
         </div>
       </section>
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+        <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 text-center sm:p-12">
+          <h2 className="text-3xl font-semibold tracking-tight">
+            Quer acessar os pacotes Pro privados?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-300">
+            Faça upgrade para receber acesso ao registry privado e instalar
+            componentes premium sem alterar a arquitetura dos pacotes públicos.
+          </p>
+          <Link
+            href="/pricing"
+            className="mt-8 inline-flex items-center justify-center rounded-xl bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-200 active:scale-[0.98]"
+          >
+            Comparar planos
+          </Link>
+        </div>
+      </section>
+
     </main>
   );
 }
