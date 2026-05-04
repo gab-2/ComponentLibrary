@@ -42,26 +42,27 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 Início
               </Link>
 
-              <Link
-                href="/components"
-                className="rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-slate-950"
-              >
-                Componentes
-              </Link>
+              <details className="group relative">
+                <summary className="flex cursor-pointer list-none items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-slate-950">
+                  Componentes
+                  <span className="text-xs transition group-open:rotate-180">▾</span>
+                </summary>
 
-              <Link
-                href="/components/free"
-                className="rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-slate-950"
-              >
-                Free
-              </Link>
-
-              <Link
-                href="/components/pro"
-                className="rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-slate-950"
-              >
-                Pro
-              </Link>
+                <div className="absolute left-0 top-full z-50 mt-2 w-56 rounded-2xl border border-white/10 bg-slate-950 p-2 shadow-2xl shadow-black/40">
+                  <Link
+                    href="/components/free"
+                    className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
+                  >
+                    Free
+                  </Link>
+                  <Link
+                    href="/components/pro"
+                    className="mt-1 block rounded-xl px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
+                  >
+                    Pro
+                  </Link>
+                </div>
+              </details>
 
               <Link
                 href="/pricing"
@@ -73,7 +74,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             <div className="hidden items-center gap-3 md:flex">
               <Link
-                href="/components"
+                href="/components/free"
                 className="inline-flex items-center justify-center rounded-xl border border-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-slate-950 active:scale-[0.98]"
               >
                 Explorar componentes
@@ -107,26 +108,26 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     Início
                   </Link>
 
-                  <Link
-                    href="/components"
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
-                  >
-                    Componentes
-                  </Link>
-
-                  <Link
-                    href="/components/free"
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
-                  >
-                    Free
-                  </Link>
-
-                  <Link
-                    href="/components/pro"
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
-                  >
-                    Pro
-                  </Link>
+                  <details className="group rounded-xl">
+                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200">
+                      Componentes
+                      <span className="text-xs transition group-open:rotate-180">▾</span>
+                    </summary>
+                    <div className="mt-1 space-y-1 px-2 pb-1">
+                      <Link
+                        href="/components/free"
+                        className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
+                      >
+                        Free
+                      </Link>
+                      <Link
+                        href="/components/pro"
+                        className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
+                      >
+                        Pro
+                      </Link>
+                    </div>
+                  </details>
 
                   <Link
                     href="/pricing"
@@ -138,7 +139,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
                 <div className="mt-3 grid gap-2 border-t border-white/10 pt-3">
                   <Link
-                    href="/components"
+                    href="/components/free"
                     className="inline-flex items-center justify-center rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 active:scale-[0.98]"
                   >
                     Explorar componentes
