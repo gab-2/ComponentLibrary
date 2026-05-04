@@ -225,10 +225,37 @@ Install dependencies:
 pnpm install
 ```
 
-Start development services:
+Start frontend (single app on port 3000):
 
 ```bash
 pnpm dev
+```
+
+Frontend URLs (single app):
+
+- `http://localhost:3000/` (marketing home)
+- `http://localhost:3000/pricing`
+- `http://localhost:3000/components`
+- `http://localhost:3000/components/free`
+- `http://localhost:3000/components/pro`
+- `http://localhost:3000/docs`
+- `http://localhost:3000/docs/public`
+- `http://localhost:3000/docs/react`
+- `http://localhost:3000/docs/vue`
+- `http://localhost:3000/docs/angular`
+- `http://localhost:3000/docs/svelte`
+- `http://localhost:3000/docs/web-components`
+- `http://localhost:3000/docs/pro/react?email=pro@example.com`
+- `http://localhost:3000/dashboard`
+- `http://localhost:3000/dashboard/overview?email=pro@example.com`
+- `http://localhost:3000/dashboard/billing?email=pro@example.com`
+- `http://localhost:3000/dashboard/install-instructions?email=pro@example.com`
+- `http://localhost:3000/dashboard/tokens?email=pro@example.com`
+
+Run all workspace dev scripts (API, registry, docs tooling etc.):
+
+```bash
+pnpm dev:full
 ```
 
 Run build:
