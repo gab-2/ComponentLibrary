@@ -7,11 +7,11 @@ function getMockAccessState(): AccessState {
 }
 
 const localNpmrc = `@sua-marca-pro:registry=https://registry.suamarca.dev
-//registry.suamarca.dev/:_authToken=smui_live_xxxxx
+//registry.suamarca.dev/:_authToken=USER_TOKEN
 always-auth=true`;
 
 const productionNpmrc = `@sua-marca-pro:registry=https://registry.suamarca.dev
-//registry.suamarca.dev/:_authToken=\${NPM_TOKEN}
+//registry.suamarca.dev/:_authToken=YOUR_NPM_TOKEN
 always-auth=true`;
 
 const installCommand = `npm install @sua-marca-pro/react
