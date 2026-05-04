@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const dashboardBase = process.env.DASHBOARD_E2E_BASE_URL ?? 'http://localhost:3000';
+const dashboardBase = process.env.DASHBOARD_E2E_BASE_URL ?? 'http://127.0.0.1:3000';
 
 // Requires services + seed users running locally.
 test.describe('Phase 4 dashboard entitlement journeys', () => {
