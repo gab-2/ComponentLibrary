@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const dashboardBase = process.env.DASHBOARD_E2E_BASE_URL ?? 'http://localhost:3002';
+const dashboardBase = process.env.DASHBOARD_E2E_BASE_URL ?? 'http://127.0.0.1:3000';
 
 // Requires services + seed users running locally.
 test.describe('Phase 4 dashboard entitlement journeys', () => {
@@ -43,7 +43,7 @@ test.describe('Phase 4 dashboard entitlement journeys', () => {
     });
     expect(revoke.ok()).toBeTruthy();
 
-    const authorize = await request.post('http://localhost:4873/authorize', {
+    const authorize = await request.post(`${dashboardBase}/api/dashboard/authorize`, {
       data: { token: tokenValue, packageName: '@sua-marca-ui-pro/react', action: 'install' },
     });
     expect(authorize.status()).toBe(403);
