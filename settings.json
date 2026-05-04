@@ -1,0 +1,12 @@
+{
+  "tailwindCSS.experimental.configFile": {
+    "apps/frontend/tailwind.config.ts": "apps/frontend/**/*.{js,ts,jsx,tsx,mdx}"
+  },
+  "tailwindCSS.colorDecorators": true,
+  "editor.colorDecorators": true,
+  "tailwindCSS.suggestions": true,
+  "tailwindCSS.hovers": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
+}

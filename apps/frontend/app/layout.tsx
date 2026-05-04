@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 href="/components"
                 className="inline-flex items-center justify-center rounded-xl border border-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-slate-950 active:scale-[0.98]"
               >
-                Explorar
+                Explorar componentes
               </Link>
 
               <Link
