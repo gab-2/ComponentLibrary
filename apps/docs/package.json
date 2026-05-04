@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev -p 3003",
+    "dev": "next dev -p 3103",
     "build": "tsc -v",
     "lint": "prettier --check package.json",
     "test": "node ../../tooling/scripts/run-vitest-safe.mjs run --passWithNoTests",
