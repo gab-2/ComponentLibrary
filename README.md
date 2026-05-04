@@ -225,19 +225,13 @@ Install dependencies:
 pnpm install
 ```
 
-Start unified localhost routing for frontend apps (default):
+Start frontend (single app on port 3000):
 
 ```bash
 pnpm dev
 ```
 
-If you want to run every workspace dev script in parallel (full monorepo mode):
-
-```bash
-pnpm dev:full
-```
-
-Unified frontend URLs:
+Frontend URLs (single app):
 
 - `http://localhost:3000/` (marketing home)
 - `http://localhost:3000/pricing`
@@ -257,6 +251,12 @@ Unified frontend URLs:
 - `http://localhost:3000/dashboard/billing?email=pro@example.com`
 - `http://localhost:3000/dashboard/install-instructions?email=pro@example.com`
 - `http://localhost:3000/dashboard/tokens?email=pro@example.com`
+
+Run all workspace dev scripts (API, registry, docs tooling etc.):
+
+```bash
+pnpm dev:full
+```
 
 Run build:
 
